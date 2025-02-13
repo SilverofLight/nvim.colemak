@@ -90,7 +90,7 @@ return {
             keymap = {
               accept = false,
               accept_word = "<C-e>",
-              accept_line = "<C-i>",
+              accept_line = "<C-l>",
               next = "<C-]>",
               prev = "<C-[>",
               dismiss = "<C-\\>",
@@ -107,7 +107,7 @@ return {
             cvs = false,
             ["."] = false,
           },
-          vim.keymap.set("i", "<C-l>", function()
+          vim.keymap.set("i", "<C-i>", function()
             require('copilot.suggestion').accept()
           end),
           copilot_node_command = 'node', -- Node.js version must be > 18.x
