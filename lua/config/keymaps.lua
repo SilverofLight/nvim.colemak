@@ -95,6 +95,9 @@ key.set("n", "u", "i")
 key.set("n", "U", "I")
 key.set("n", "l", "u")
 
+key.set("n", "<C-t>", "e")
+key.set("v", "<C-t>", "e")
+
 -- tab
 key.set("n", "tu", "<cmd>tabnew<cr>")
 key.set("n", "N", "<cmd>tabprevious<cr>")
