@@ -39,6 +39,7 @@ return {
           'snippet_forward',
           'fallback'
         },
+        ['<C-k>'] = { 'select_next', 'fallback' },
         -- ['<Tab>'] = {
         --   'accept',
         --   'fallback'
