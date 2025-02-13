@@ -11,7 +11,7 @@ key.set("n", "<esc>", "<cmd>nohl<CR>")
 -- key.set("n", "s", "<nop>")
 
 key.set("n", "<leader>o", "/<++><CR><cmd>nohl<CR>c4l")
-key.set("n", "<leader>i", "?<++><CR><cmd>nohl<CR>c4l")
+-- key.set("n", "<leader>i", "?<++><CR><cmd>nohl<CR>c4l")
 
 -- quick quit
 key.set("n", "<leader>qq", "<cmd>quitall<cr>")
