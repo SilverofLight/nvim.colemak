@@ -64,7 +64,7 @@ key.set("n", "e", "gk")
 key.set("v", "n", "gj")
 key.set("v", "e", "gk")
 
-key.set("v", "i", "l")
+key.set("n", "i", "l")
 key.set("v", "i", "l")
 
 key.set("n", "k", "n")
