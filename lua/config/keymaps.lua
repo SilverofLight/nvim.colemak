@@ -7,6 +7,7 @@ vim.g.mapleader = " "
 key.set("i", "<C-q>", "<++>")
 key.set("i", "<esc>", "<esc>")
 key.set("n", "<esc>", "<cmd>nohl<CR>")
+key.set("n", "S", "<cmd>w<CR>")
 
 -- key.set("n", "s", "<nop>")
 
@@ -72,7 +73,9 @@ key.set("v", "k", "n")
 key.set("n", "K", "N")
 key.set("v", "K", "N")
 
--- d c y comboos
+key.set("n", "<C-p>", "<C-e>")
+
+-- d c y comboo
 key.set("n", "di", "dl")
 key.set("n", "dn", "dj")
 key.set("n", "de", "dk")
