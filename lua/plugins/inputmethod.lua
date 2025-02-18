@@ -36,7 +36,8 @@ return {
             keep_quiet_on_no_binary = false,
 
             -- Async run `default_command` to switch IM or not
-            async_switch_im = true
+            async_switch_im = true,
+            second_method_selected = "rime",
         })
     end,
 }
