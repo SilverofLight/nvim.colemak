@@ -152,4 +152,4 @@ vim.keymap.set('n', '<leader>ff', "<cmd>Telescope live_grep<CR>", { desc = 'Tele
 vim.keymap.set('n', '<leader>fg', "<cmd>Telescope git_files<CR>", { desc = 'Telescope find files in git' })
 
 -- lean
-vim.keymap.set('i', '<C-o>', '<ESC>o(<ESC>klywjp<C-a>a: )<ESC>i')
+-- vim.keymap.set('i', '<C-o>', '<ESC>o(<ESC>klywjp<C-a>a: )<ESC>i')
