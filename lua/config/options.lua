@@ -46,7 +46,7 @@ vim.g.autoformat = true
 vim.g.deprecation_warnings = false
 
 -- save history
-vim.cmd([[au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif]])
+-- vim.cmd([[au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif]])
 
 -- enable spell check
 opt.spell = false
