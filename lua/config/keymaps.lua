@@ -102,6 +102,9 @@ key.set("n", "<C-t>", "e")
 key.set("v", "<C-t>", "e")
 
 key.set("n", "<C-l>", "<C-u>")
+key.set("v", "<C-l>", "<C-u>")
+
+key.set("n", "<C-j>", "<C-i>")
 
 -- tab
 key.set("n", "tu", "<cmd>tabnew<cr>")

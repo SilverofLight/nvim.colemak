@@ -14,5 +14,6 @@ return {
     --   comments_only = false,
     -- },
     -- INFO:
-  }
+  },
+  vim.keymap.set("n", "gt", "<cmd>TodoTelescope<cr>")
 }
