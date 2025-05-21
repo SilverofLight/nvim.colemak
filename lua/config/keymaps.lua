@@ -51,19 +51,21 @@ key.set("n", "<leader>-", "<C-w>s")
 key.set("n", ";", ":")
 
 -- better J K
-key.set("n", "<C-n>", "5j")
-key.set("n", "<C-e>", "5k")
-key.set("v", "<C-n>", "5j")
-key.set("v", "<C-e>", "5k")
-key.set("n", "<C-h>", "8h")
-key.set("n", "<C-i>", "8l")
-key.set("v", "<C-h>", "8h")
-key.set("v", "<C-i>", "8l")
+key.set("n", "<C-n>", "5gj")
+key.set("n", "<C-e>", "5gk")
+key.set("v", "<C-n>", "5gj")
+key.set("v", "<C-e>", "5gk")
+key.set("n", "<C-h>", "8gh")
+key.set("n", "<C-i>", "8gl")
+key.set("v", "<C-h>", "8gh")
+key.set("v", "<C-i>", "8gl")
 
-key.set("n", "n", "j")
-key.set("n", "e", "k")
-key.set("v", "n", "j")
-key.set("v", "e", "k")
+key.set("v", "n", "gj")
+key.set("v", "e", "gk")
+
+-- better jk
+key.set({ "n", "x" }, "n", "v:count == 0 ? 'gj' : 'j'", { desc = "Down", expr = true, silent = true })
+key.set({ "n", "x" }, "e", "v:count == 0 ? 'gk' : 'k'", { desc = "Up", expr = true, silent = true })
 
 key.set("n", "i", "l")
 key.set("v", "i", "l")
