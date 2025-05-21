@@ -5,7 +5,7 @@ return {
     lazy = false,
     version = false, -- set this if you want to always pull the latest change
     opts = {
-      provider = "copilot",
+      provider = "openai",
       auto_suggestions_provider = "openai", -- Since auto-suggestions are a high-frequency operation and therefore expensive, it is recommended to specify an inexpensive provider or even a free provider: copilot
       openai = {
         endpoint = "https://api.deepseek.com/v1",
@@ -64,56 +64,56 @@ return {
       "MunifTanjim/nui.nvim",
       --- The below dependencies are optional,
       "nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
-      {
-        "zbirenbaum/copilot.lua",    -- for providers='copilot'
-        opts = {
-          panel = {
-            enabled = true,
-            auto_refresh = false,
-            keymap = {
-              jump_prev = "[[",
-              jump_next = "]]",
-              accept = "<CR>",
-              refresh = "gr",
-              open = "<M-CR>"
-            },
-            layout = {
-              position = "bottom", -- | top | left | right | horizontal | vertical
-              ratio = 0.4
-            },
-          },
-          suggestion = {
-            enabled = true,
-            auto_trigger = true,
-            hide_during_completion = true,
-            debounce = 75,
-            keymap = {
-              accept = false,
-              accept_word = "<C-e>",
-              accept_line = "<C-l>",
-              next = "<C-]>",
-              prev = "<C-[>",
-              dismiss = "<C-\\>",
-            },
-          },
-          filetypes = {
-            yaml = false,
-            markdown = false,
-            help = false,
-            gitcommit = false,
-            gitrebase = false,
-            hgcommit = false,
-            svn = false,
-            cvs = false,
-            ["."] = false,
-          },
-          vim.keymap.set("i", "<C-i>", function()
-            require('copilot.suggestion').accept()
-          end),
-          copilot_node_command = 'node', -- Node.js version must be > 18.x
-          server_opts_overrides = {},
-        }
-      },
+      -- {
+      --   "zbirenbaum/copilot.lua",    -- for providers='copilot'
+      --   opts = {
+      --     panel = {
+      --       enabled = true,
+      --       auto_refresh = false,
+      --       keymap = {
+      --         jump_prev = "[[",
+      --         jump_next = "]]",
+      --         accept = "<CR>",
+      --         refresh = "gr",
+      --         open = "<M-CR>"
+      --       },
+      --       layout = {
+      --         position = "bottom", -- | top | left | right | horizontal | vertical
+      --         ratio = 0.4
+      --       },
+      --     },
+      --     suggestion = {
+      --       enabled = true,
+      --       auto_trigger = true,
+      --       hide_during_completion = true,
+      --       debounce = 75,
+      --       keymap = {
+      --         accept = false,
+      --         accept_word = "<C-e>",
+      --         accept_line = "<C-l>",
+      --         next = "<C-]>",
+      --         prev = "<C-[>",
+      --         dismiss = "<C-\\>",
+      --       },
+      --     },
+      --     filetypes = {
+      --       yaml = false,
+      --       markdown = false,
+      --       help = false,
+      --       gitcommit = false,
+      --       gitrebase = false,
+      --       hgcommit = false,
+      --       svn = false,
+      --       cvs = false,
+      --       ["."] = false,
+      --     },
+      --     vim.keymap.set("i", "<C-i>", function()
+      --       require('copilot.suggestion').accept()
+      --     end),
+      --     copilot_node_command = 'node', -- Node.js version must be > 18.x
+      --     server_opts_overrides = {},
+      --   }
+      -- },
       {
         -- support for image pasting
         "HakonHarnes/img-clip.nvim",
