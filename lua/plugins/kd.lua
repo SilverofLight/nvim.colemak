@@ -1,5 +1,7 @@
 return {
   "SilverofLight/kd_translate.nvim",
+  lazy = true,
+  cmd = {"TranslateNormal", "TranslateVisual"},
   config = function()
     require("kd").setup({
       window = {
