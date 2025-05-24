@@ -158,3 +158,5 @@ vim.keymap.set('n', '<leader>fg', "<cmd>Telescope git_files<CR>", { desc = 'Tele
 
 -- lean
 -- vim.keymap.set('i', '<C-o>', '<ESC>o(<ESC>klywjp<C-a>a: )<ESC>i')
+-- notify history
+key.set("n", "<leader>,", "<cmd>lua Snacks.notifier.show_history()<cr>")

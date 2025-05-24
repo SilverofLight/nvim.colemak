@@ -1,24 +1,13 @@
 return {
-  -- auto completion
-  -- {
-  --   "hrsh7th/nvim-cmp",
-  --   version = false,     -- last release is way too old
-  --   -- event = "InsertEnter",
-  --   dependencies = {
-  --     "hrsh7th/cmp-nvim-lsp",
-  --     "hrsh7th/cmp-buffer",
-  --     "hrsh7th/cmp-path",
-  --     "hrsh7th/cmp-cmdline",
-  --     "f3fora/cmp-spell",
-  --   },
-  --   event = "InsertEnter",
-  -- },
   {
     'saghen/blink.cmp',
     cond = not vim.g.vscode,
     lazy = true,
     -- optional: provides snippets for the snippet source
     -- dependencies = 'rafamadriz/friendly-snippets',
+    dependencies = {
+      'Kaiser-Yang/blink-cmp-avante',
+    },
 
     -- use a release tag to download pre-built binaries
     version = '*',
@@ -41,10 +30,18 @@ return {
           'fallback'
         },
         ['<C-k>'] = { 'select_next', 'fallback' },
-        -- ['<Tab>'] = {
-        --   'accept',
-        --   'fallback'
-        -- },
+      },
+      sources = {
+        default = { 'avante', 'lsp', 'path', 'buffer' },
+        providers = {
+          avante = {
+            module = 'blink-cmp-avante',
+            name = "Avante",
+            opts = {
+              -- opts for blink-cmp-avante
+            }
+          }
+        }
       },
 
       appearance = {

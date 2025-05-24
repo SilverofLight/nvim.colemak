@@ -1,7 +1,6 @@
 return {
   {
     'echasnovski/mini.cursorword',
-    lazy = true,
     version = '*',
     config = function()
       require('mini.cursorword').setup()

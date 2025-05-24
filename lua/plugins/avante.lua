@@ -4,18 +4,19 @@ return {
     event = "VeryLazy",
     version = false, -- set this if you want to always pull the latest change
     opts = {
-      provider = "openai",
-      auto_suggestions_provider = "openai", -- Since auto-suggestions are a high-frequency operation and therefore expensive, it is recommended to specify an inexpensive provider or even a free provider: copilot
-      openai = {
-        endpoint = "https://api.deepseek.com/v1",
-        model = "deepseek-chat",
-        timeout = 30000, -- Timeout in milliseconds
-        temperature = 0,
-        max_tokens = 4096,
-        api_key_name = "DEEPSEEK_API_KEY"
+      provider = "deepseek",
+      auto_suggestions_provider = "deepseek", -- Since auto-suggestions are a high-frequency operation and therefore expensive, it is recommended to specify an inexpensive provider or even a free provider: copilot
+      vendors = {
+        deepseek = {
+          __inherited_from = "openai",
+          api_key_name = "DEEPSEEK_API_KEY",
+          endpoint = "https://api.deepseek.com",
+          model = "deepseek-coder",
+          disable_tools = true,
+        },
       },
       behaviour = {
-        auto_suggestions = false, -- Experimental stage
+        auto_suggestions = true, -- Experimental stage
         auto_set_keymaps = false,
         auto_set_highlight_group = true,
       },
@@ -48,8 +49,10 @@ return {
         sidebar = {
           apply_all = "A",
           apply_cursor = "a",
+          edit_user_request = "u",
           switch_windows = "<Tab>",
           reverse_switch_windows = "<S-Tab>",
+          close_from_input = {normal = "<Esc>"}, -- e.g., { normal = "<Esc>", insert = "<C-d>" }
         },
       },
     },
