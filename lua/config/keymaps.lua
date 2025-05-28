@@ -31,10 +31,10 @@ key.set("n", "<leader>e", "<C-w>k")
 key.set("n", "<leader>i", "<C-w>l")
 
 -- window resize
-key.set("n", "<up>", "<cmd>res +2<CR>")
-key.set("n", "<down>", "<cmd>res -2<CR>")
-key.set("n", "<left>", "<cmd>vertical resize -2<CR>")
-key.set("n", "<right>", "<cmd>vertical resize +2<CR>")
+key.set("n", "<C-up>", "<cmd>res +2<CR>")
+key.set("n", "<C-down>", "<cmd>res -2<CR>")
+key.set("n", "<C-left>", "<cmd>vertical resize -2<CR>")
+key.set("n", "<C-right>", "<cmd>vertical resize +2<CR>")
 
 -- move lines
 -- key.set("v", "J", "<cmd>m '>+1<CR>gv=gv")
