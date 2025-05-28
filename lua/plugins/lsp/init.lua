@@ -22,7 +22,7 @@ return {
     -- example using `opts` for defining servers
     opts = {
       servers = {
-        lua_ls = {}
+        -- lua_ls = {}
       }
     },
     config = function(_, opts)
