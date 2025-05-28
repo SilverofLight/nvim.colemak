@@ -1,7 +1,8 @@
 ---@type LazySpec
 return {
   "mikavilpas/yazi.nvim",
-  event = "VeryLazy",
+  -- event = "VeryLazy",
+  yazi = true,
   keys = {
     -- 👇 in this section, choose your own keymappings!
     {
