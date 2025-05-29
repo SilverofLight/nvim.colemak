@@ -9,6 +9,10 @@ key.set("i", "<esc>", "<esc>")
 key.set("n", "<esc>", "<cmd>nohl<CR>")
 key.set("n", "S", "<cmd>w<CR>")
 
+-- disable q
+key.set('n', 'Q', "q")
+key.set('n', 'q', "<nop>")
+
 -- key.set("n", "s", "<nop>")
 
 key.set("n", "<leader>o", "/<++><CR><cmd>nohl<CR>c4l")
