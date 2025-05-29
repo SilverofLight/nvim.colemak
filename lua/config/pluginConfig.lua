@@ -1,4 +1,4 @@
----@diagnostic disable: undefined-global
+-----@diagnostic disable: undefined-global
 -- hop
 local hop = require('hop')
 local directions = require('hop.hint').HintDirection
@@ -15,6 +15,12 @@ vim.keymap.set('n', 'gd', ":lua vim.lsp.buf.definition()<CR>")
 vim.keymap.set('n', '<leader>ca', ":lua vim.lsp.buf.code_action()<CR>")
 vim.keymap.set('n', '<leader>r', ":lua vim.lsp.buf.rename()<CR>")
 vim.keymap.set('n', 'gh', ":lua vim.lsp.buf.hover()<CR>")
+vim.keymap.set('n', 'gl', ":lua vim.diagnostic.open_float()<CR>")
+vim.diagnostic.config({
+  float = {
+    border = "rounded",
+  }
+})
 
 -- if not vim.g.vscode then
 --   -- blink.cmp ghost color
