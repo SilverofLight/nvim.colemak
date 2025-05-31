@@ -3,10 +3,11 @@ return {
     "yetone/avante.nvim",
     -- event = "VeryLazy",
     lazy = true,
+    cmd = "AvanteToggle",
     version = false, -- set this if you want to always pull the latest change
     opts = {
       provider = "deepseek",
-      auto_suggestions_provider = "deepseek", -- Since auto-suggestions are a high-frequency operation and therefore expensive, it is recommended to specify an inexpensive provider or even a free provider: copilot
+      -- auto_suggestions_provider = "groq_llama8B", -- Since auto-suggestions are a high-frequency operation and therefore expensive, it is recommended to specify an inexpensive provider or even a free provider: copilot
       vendors = {
         deepseek = {
           __inherited_from = "openai",
@@ -15,9 +16,40 @@ return {
           model = "deepseek-coder",
           disable_tools = true,
         },
+        groq_qwen = {
+          __inherited_from = "openai",
+          api_key_name = "GROQ_API_KEY",
+          endpoint = "https://api.groq.com/openai/v1/",
+          model = "qwen-qwq-32b",
+          max_completion_tokens = 2048,
+        },
+        groq_llama70B = {
+          __inherited_from = "openai",
+          api_key_name = "GROQ_API_KEY",
+          endpoint = "https://api.groq.com/openai/v1/",
+          -- meta-llama/llama-4-scout-17b-16e-instruct | meta-llama/llama-4-maverick-17b-128e-instruct
+          -- qwen-qwq-32b | deepseek-r1-distill-qwen-32b | deepseek-r1-distill-llama-70b 
+          -- llama-3.3-70b-versatile | llama-3.1-8b-instant | gemma2-9b-it
+          model = "llama-3.3-70b-versatile",
+          max_completion_tokens = 1024,
+        },
+        groq_llama17B_16e = {
+          __inherited_from = "openai",
+          api_key_name = "GROQ_API_KEY",
+          endpoint = "https://api.groq.com/openai/v1/",
+          model = "meta-llama/llama-4-scout-17b-16e-instruct",
+          max_completion_tokens = 4096,
+        },
+        groq_llama8B = {
+          __inherited_from = "openai",
+          api_key_name = "GROQ_API_KEY",
+          endpoint = "https://api.groq.com/openai/v1/",
+          model = "llama-3.1-8b-instant",
+          max_completion_tokens = 4096,
+        }
       },
       behaviour = {
-        auto_suggestions = true, -- Experimental stage
+        auto_suggestions = false, -- Experimental stage
         auto_set_keymaps = false,
         auto_set_highlight_group = true,
       },
