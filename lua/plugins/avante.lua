@@ -21,6 +21,7 @@ return {
           api_key_name = "GROQ_API_KEY",
           endpoint = "https://api.groq.com/openai/v1/",
           model = "qwen-qwq-32b",
+          disable_tools = true,
           max_completion_tokens = 2048,
         },
         groq_llama70B = {
@@ -30,6 +31,7 @@ return {
           -- meta-llama/llama-4-scout-17b-16e-instruct | meta-llama/llama-4-maverick-17b-128e-instruct
           -- qwen-qwq-32b | deepseek-r1-distill-qwen-32b | deepseek-r1-distill-llama-70b 
           -- llama-3.3-70b-versatile | llama-3.1-8b-instant | gemma2-9b-it
+          disable_tools = true,
           model = "llama-3.3-70b-versatile",
           max_completion_tokens = 1024,
         },
@@ -38,6 +40,7 @@ return {
           api_key_name = "GROQ_API_KEY",
           endpoint = "https://api.groq.com/openai/v1/",
           model = "meta-llama/llama-4-scout-17b-16e-instruct",
+          disable_tools = true,
           max_completion_tokens = 4096,
         },
         groq_llama8B = {
@@ -45,6 +48,7 @@ return {
           api_key_name = "GROQ_API_KEY",
           endpoint = "https://api.groq.com/openai/v1/",
           model = "llama-3.1-8b-instant",
+          disable_tools = true,
           max_completion_tokens = 4096,
         }
       },
