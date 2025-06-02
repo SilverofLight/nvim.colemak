@@ -10,12 +10,12 @@ vim.keymap.set('', 'F', function()
 end, { silent = true })
 
 
-vim.keymap.set('n', '<leader>fm', ":lua vim.lsp.buf.format { async = true }<CR>")
-vim.keymap.set('n', 'gd', ":lua vim.lsp.buf.definition()<CR>")
-vim.keymap.set('n', '<leader>ca', ":lua vim.lsp.buf.code_action()<CR>")
-vim.keymap.set('n', '<leader>r', ":lua vim.lsp.buf.rename()<CR>")
-vim.keymap.set('n', 'gh', ":lua vim.lsp.buf.hover()<CR>")
-vim.keymap.set('n', 'gl', ":lua vim.diagnostic.open_float()<CR>")
+vim.keymap.set('n', '<leader>fm', ":lua vim.lsp.buf.format { async = true }<CR>", { desc = "Lsp format" })
+vim.keymap.set('n', 'gd', ":lua vim.lsp.buf.definition()<CR>", { desc = "Goto Definition" })
+vim.keymap.set('n', '<leader>ca', ":lua vim.lsp.buf.code_action()<CR>", { desc = "Code action" })
+vim.keymap.set('n', '<leader>r', ":lua vim.lsp.buf.rename()<CR>", { desc = "Lsp Rename" })
+vim.keymap.set('n', 'gh', ":lua vim.lsp.buf.hover()<CR>", { desc = "Lsp Hover" })
+vim.keymap.set('n', 'gl', ":lua vim.diagnostic.open_float()<CR>", { desc = "Diagnostic" })
 vim.diagnostic.config({
   float = {
     border = "rounded",
@@ -86,6 +86,22 @@ require('gitsigns').setup {
 }
 
 -- avante
-vim.keymap.set("n", "ta", "<cmd>AvanteToggle<CR>")
-vim.keymap.set("v", "<leader>ta", "<cmd>AvanteAsk<CR>")
-vim.keymap.set("v", "<leader>te", "<cmd>AvanteEdit<CR>")
+vim.keymap.set("n", "ta", "<cmd>AvanteToggle<CR>", { desc = "Toggle Avante" })
+vim.keymap.set("v", "<leader>ta", "<cmd>AvanteAsk<CR>", { desc = "Avante Ask" })
+vim.keymap.set("v", "<leader>te", "<cmd>AvanteEdit<CR>", { desc = "Avante Edit" })
+
+-- which key
+local wk = require("which-key")
+wk.add({
+  { "<leader>b", group = "Buffer" },
+  { "<leader>x", group = "Trouble" },
+  { "<leader>w", group = "Warp & Save" },
+  { "<leader>u", group = "Spell" },
+  { "<leader>f", group = "Telescope, Aerial & lsp" },
+  { "<leader>c", group = "Lsp" },
+  { "<leader>g", group = "Terminal" },
+  { "<leader>q", group = "Quit" },
+  { "t", group = "Tab" },
+  { "gr", group = "Lsp" },
+  { "gT", hidden = true },
+})

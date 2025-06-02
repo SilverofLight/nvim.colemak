@@ -15,24 +15,24 @@ key.set('n', 'q', "<nop>")
 
 -- key.set("n", "s", "<nop>")
 
-key.set("n", "<leader>o", "/<++><CR><cmd>nohl<CR>c4l")
+key.set("n", "<leader>o", "/<++><CR><cmd>nohl<CR>c4l", { desc = "replace next <++>" })
 -- key.set("n", "<leader>i", "?<++><CR><cmd>nohl<CR>c4l")
 
 -- quick quit
-key.set("n", "<leader>qq", "<cmd>quitall<cr>")
-key.set("n", "<leader>wq", "<cmd>wq<cr>")
+key.set("n", "<leader>qq", "<cmd>quitall<cr>", { desc = "Quitall" })
+key.set("n", "<leader>wq", "<cmd>wq<cr>", { desc = "Save and quit" })
 
 -- easy way to go to the end of a line
-key.set("n", "<leader>s", "$")
-key.set("v", "<leader>s", "$")
-key.set("n", "<leader>a", "0")
-key.set("v", "<leader>a", "0")
+key.set("n", "<leader>s", "$", { desc = "End of line" })
+key.set("v", "<leader>s", "$", { desc = "End of line" })
+key.set("n", "<leader>a", "0", { desc = "Begin of line" })
+key.set("v", "<leader>a", "0", { desc = "Begin of line" })
 
 -- 窗口切换
-key.set("n", "<leader>h", "<C-w>h")
-key.set("n", "<leader>n", "<C-w>j")
-key.set("n", "<leader>e", "<C-w>k")
-key.set("n", "<leader>i", "<C-w>l")
+key.set("n", "<leader>h", "<C-w>h", { desc = "Window left" })
+key.set("n", "<leader>n", "<C-w>j", { desc = "Window down" })
+key.set("n", "<leader>e", "<C-w>k", { desc = "Window up" })
+key.set("n", "<leader>i", "<C-w>l", { desc = "Window right" })
 
 -- window resize
 key.set("n", "<C-up>", "<cmd>res +2<CR>")
@@ -48,8 +48,8 @@ key.set("n", "<C-right>", "<cmd>vertical resize +2<CR>")
 -- key.set("v", "io", "<ESC>")
 
 -- add split
-key.set("n", "<leader>|", "<C-w>v")
-key.set("n", "<leader>-", "<C-w>s")
+key.set("n", "<leader>|", "<C-w>v", { desc = "Split window right" })
+key.set("n", "<leader>-", "<C-w>s", { desc = "Split window down" })
 
 -- ; -> :
 key.set("n", ";", ":")
@@ -113,7 +113,7 @@ key.set("v", "<C-l>", "<C-u>")
 key.set("n", "<C-j>", "<C-i>")
 
 -- tab
-key.set("n", "tu", "<cmd>tabnew<cr>")
+key.set("n", "tu", "<cmd>tabnew<cr>", { desc = "Tabnew" })
 key.set("n", "N", "<cmd>tabprevious<cr>")
 key.set("n", "E", "<cmd>tabnext<cr>")
 
@@ -129,7 +129,7 @@ function ToggleWrap()
     end
 end
 
-key.set("n", "<leader>wr", [[<cmd>lua ToggleWrap()<CR>]])
+key.set("n", "<leader>wr", [[<cmd>lua ToggleWrap()<CR>]], { desc = "Toggle Wrap" })
 
 function ToggleSpell()
     if vim.opt.spell:get() then
@@ -139,21 +139,21 @@ function ToggleSpell()
     end
 end
 
-key.set("n", "<leader>us", [[<cmd>lua ToggleSpell()<CR>]])
+key.set("n", "<leader>us", [[<cmd>lua ToggleSpell()<CR>]], { desc = "Toggle Spell" })
 
 -- terminal
-key.set("n", "<leader>gt", "<cmd>vsplit term://fish<CR>")
+key.set("n", "<leader>gt", "<cmd>vsplit term://fish<CR>", { desc = "Terminal" })
 key.set("t", "<C-s>", "<C-\\><C-n>")
 
 -- markdown preview
-key.set("n", "<leader>p", "<cmd>MarkdownPreview<CR>")
+key.set("n", "<leader>p", "<cmd>MarkdownPreview<CR>", { desc = "MarkdownPreview" })
 
 -- buffer
 key.set("n", "H", "<cmd>BufferLineCyclePrev<CR>")
 key.set("n", "I", "<cmd>BufferLineCycleNext<CR>")
-key.set("n", "<leader>bc", "<cmd>BufferLinePickClose<CR>")
-key.set("n", "<leader>bp", "<cmd>BufferLinePick<CR>")
-key.set("n", "<leader>bd", "<cmd>bdelete<CR>")
+key.set("n", "<leader>bc", "<cmd>BufferLinePickClose<CR>", { desc = "Buffer pick close" })
+key.set("n", "<leader>bp", "<cmd>BufferLinePick<CR>", { desc = "Buffer pick" })
+key.set("n", "<leader>bd", "<cmd>bdelete<CR>", { desc = "Buffer delete" })
 
 -- Telescope
 vim.keymap.set('n', '<leader><leader>', "<cmd>Telescope find_files<CR>", { desc = 'Telescope find files' })
@@ -163,4 +163,4 @@ vim.keymap.set('n', '<leader>fg', "<cmd>Telescope git_files<CR>", { desc = 'Tele
 -- lean
 -- vim.keymap.set('i', '<C-o>', '<ESC>o(<ESC>klywjp<C-a>a: )<ESC>i')
 -- notify history
-key.set("n", "<leader>,", "<cmd>lua Snacks.notifier.show_history()<cr>")
+key.set("n", "<leader>,", "<cmd>lua Snacks.notifier.show_history()<cr>", { desc = "Notifier history" })

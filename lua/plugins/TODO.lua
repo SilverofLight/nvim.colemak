@@ -15,5 +15,5 @@ return {
     -- },
     -- INFO:
   },
-  vim.keymap.set("n", "gt", "<cmd>TodoTelescope<cr>")
+  vim.keymap.set("n", "gt", "<cmd>TodoTelescope<cr>", { desc = "Telescope TODO" })
 }
