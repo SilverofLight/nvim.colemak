@@ -119,6 +119,7 @@ key.set("n", "E", "<cmd>tabnext<cr>")
 
 -- hop config
 key.set("n", "s", "<cmd>HopWord<CR>")
+key.set("v", "s", "<cmd>HopWord<CR>")
 
 -- togglewrap
 function ToggleWrap()
