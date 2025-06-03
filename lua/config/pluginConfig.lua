@@ -124,6 +124,7 @@ wk.add({
   { "gO", icon = " " },
   { "gi", icon = " ", desc = "Last insert position" },
   { "gv", icon = "󰒅 ", desc = "Last visual position" },
+  { "<leader>wc", icon = " ", mode = { "n", "v" } },
 })
 
 -- lualine
