@@ -1,5 +1,5 @@
 return {
-  "npc-z/wordcounter.nvim",
+  "SilverofLight/wordcounter.nvim",
   dependencies  = "uga-rosa/utf8.nvim",
   opts = {
     allowed_filetypes = { "markdown", "text" },
