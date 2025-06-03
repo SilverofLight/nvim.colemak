@@ -125,3 +125,8 @@ wk.add({
   { "gi", icon = " ", desc = "Last insert position" },
   { "gv", icon = "󰒅 ", desc = "Last visual position" },
 })
+
+-- lualine
+require("lualine").setup {
+  options = { theme = 'dracula-nvim' },
+}
