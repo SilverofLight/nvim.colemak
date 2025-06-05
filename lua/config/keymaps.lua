@@ -143,8 +143,8 @@ end
 key.set("n", "<leader>us", [[<cmd>lua ToggleSpell()<CR>]], { desc = "Toggle Spell" })
 
 -- terminal
-key.set("n", "<leader>gt", "<cmd>vsplit term://fish<CR>", { desc = "Terminal" })
-key.set("t", "<C-s>", "<C-\\><C-n>")
+-- key.set("n", "<leader>gt", "<cmd>vsplit term://fish<CR>", { desc = "Terminal" })
+-- key.set("t", "<C-s>", "<C-\\><C-n>")
 
 -- markdown preview
 key.set("n", "<leader>p", "<cmd>MarkdownPreview<CR>", { desc = "MarkdownPreview" })

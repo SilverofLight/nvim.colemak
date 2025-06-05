@@ -25,5 +25,24 @@ return {
       top_down = false,
       margin = { top = 0, right = 1, bottom = 2 }
     },
+    terminal = {
+      win = {
+        -- style = "terminal",
+        position = "float",
+        width = 0.4,
+        height = 0.85,
+        col = 0.55,
+        row = 0.1,
+        border = "rounded"
+      },
+      wo = {
+      },
+      vim.keymap.set("n", "<leader>gt",
+        function()
+          Snacks.terminal.toggle()
+        end, { desc = "Terminal" }),
+      vim.keymap.set("t", "<C-/>", "<cmd>close<cr>", { desc = "Hide Terminal" }),
+      vim.keymap.set("n", "<C-/>", "<cmd>lua Snacks.terminal.toggle()<cr>", { desc = "Toggle Terminal" }),
+    }
   }
 }
