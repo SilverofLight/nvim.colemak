@@ -43,6 +43,9 @@ return {
         end, { desc = "Terminal" }),
       vim.keymap.set("t", "<C-/>", "<cmd>close<cr>", { desc = "Hide Terminal" }),
       vim.keymap.set("n", "<C-/>", "<cmd>lua Snacks.terminal.toggle()<cr>", { desc = "Toggle Terminal" }),
+    },
+    words = {
+      vim.keymap.set("n", "gw", "<cmd>lua Snacks.words.jump()<cr>", { desc = "Next Reference" }),
     }
   }
 }

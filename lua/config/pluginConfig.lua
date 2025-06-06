@@ -10,12 +10,18 @@ vim.keymap.set('', 'F', function()
 end, { silent = true })
 
 
-vim.keymap.set('n', '<leader>fm', ":lua vim.lsp.buf.format { async = true }<CR>", { desc = "Lsp format" })
-vim.keymap.set('n', 'gd', ":lua vim.lsp.buf.definition()<CR>", { desc = "Goto Definition" })
-vim.keymap.set('n', '<leader>ca', ":lua vim.lsp.buf.code_action()<CR>", { desc = "Code action" })
-vim.keymap.set('n', '<leader>r', ":lua vim.lsp.buf.rename()<CR>", { desc = "Lsp Rename" })
-vim.keymap.set('n', 'gh', ":lua vim.lsp.buf.hover()<CR>", { desc = "Lsp Hover" })
-vim.keymap.set('n', 'gl', ":lua vim.diagnostic.open_float()<CR>", { desc = "Diagnostic" })
+vim.keymap.set('n', '<leader>fm', "<cmd>lua vim.lsp.buf.format { async = true }<CR>", { desc = "Lsp format" })
+vim.keymap.set('n', 'gd', "<cmd>lua vim.lsp.buf.definition()<CR>", { desc = "Goto Definition" })
+vim.keymap.set('n', '<leader>ca', "<cmd>lua vim.lsp.buf.code_action()<CR>", { desc = "Code action" })
+vim.keymap.set('n', '<leader>r', "<cmd>lua vim.lsp.buf.rename()<CR>", { desc = "Lsp Rename" })
+-- vim.keymap.set('n', 'gh', "<cmd>lua vim.lsp.buf.hover()<CR>", { desc = "Lsp Hover" })
+vim.keymap.set('n', 'gh', function ()
+    vim.lsp.buf.hover({
+    border = "rounded"
+  })
+end, { desc = "Lsp Hover" })
+
+vim.keymap.set('n', 'gl', "<cmd>lua vim.diagnostic.open_float()<CR>", { desc = "Diagnostic" })
 vim.diagnostic.config({
   float = {
     border = "rounded",
@@ -122,6 +128,7 @@ wk.add({
   { "gd", icon = " " },
   { "gh", icon = " " },
   { "gO", icon = " " },
+  { "gw", icon = " " },
   { "gi", icon = " ", desc = "Last insert position" },
   { "gv", icon = "󰒅 ", desc = "Last visual position" },
   { "<leader>wc", icon = " ", mode = { "n", "v" } },
