@@ -560,5 +560,242 @@
         "prefix": "\\phi",
         "body": "\\phi",
         "description": "\\phi ϕ"
+    },
+    "mermaid": {
+        "prefix": "mermaid",
+        "body": "```mermaid\n${0}\n```",
+        "description": "mermaid"
+    },
+    "flow": {
+        "prefix": "flow",
+        "body": [
+            "%% LR for horizontal",
+            "flowchart TD",
+            "A[${Title}] --> |Get money| B(Go shopping)",
+            "\tB --> C{Let me think}",
+            "\tC -->|One| D[Laptop]",
+            "\tC --> |Three| F[fa:fa-car Car]"
+        ],
+        "description": "Mermaid Flowchart"
+    },
+    "sequence": {
+        "prefix": "sequence",
+        "body": [
+            "sequenceDiagram",
+            "\tAlice->>+John: Hello John, how are you?",
+            "\tAlice->>+John: John, can you hear me?",
+            "\tJohn-->>-Alice: Hi Alice, I can hear you!",
+            "\tJohn-->>-Alice: I feel great!"
+        ],
+        "description": "Mermaid Sequence"
+    },
+    "class": {
+        "prefix": "class",
+        "body": [
+            "classDiagram",
+            "\tAnimal <|-- Duck",
+            "\tAnimal <|-- Fish",
+            "\tAnimal : +int age",
+            "\tAnimal : +String gender",
+            "\tAnimal: +isMammal()",
+            "\tAnimal: +mate()",
+            "\tclass Duck{",
+            "\t\t+String beakColor",
+            "\t\t+swim()",
+            "\t}",
+            "\tclass Fish{",
+            "\t\t-int sizeInFeet",
+            "\t\tcanEat()",
+            "\t}"
+        ],
+        "description": "Mermaid Class"
+    },
+    "state": {
+        "prefix": "state",
+        "body": [
+            "stateDiagram-v2",
+            "\t[*] --> Still",
+            "\tStill --> [*]",
+            "\tStill --> Moving",
+            "\tMoving --> Still",
+            "\tMoving --> Crash",
+            "\tCrash --> [*]"
+        ],
+        "description": "Mermaid State"
+    },
+    "erDiagram": {
+        "prefix": "er",
+        "body": [
+            "erDiagram",
+            "\tCUSTOMER }|..|{ DELIVERY-ADDRESS : has",
+            "\tCUSTOMER ||--o{ ORDER : places",
+            "\tCUSTOMER ||--o{ INVOICE : \"liable for\"",
+            "\tDELIVERY-ADDRESS ||--o{ ORDER : receives",
+            "\tINVOICE ||--|{ ORDER : covers",
+            "\tORDER ||--|{ ORDER-ITEM : includes",
+            "\tPRODUCT-CATEGORY ||--|{ PRODUCT : contains",
+            "\tPRODUCT ||--o{ ORDER-ITEM : \"ordered in\""
+        ],
+        "description": "Mermaid ER Diagram"
+    },
+    "GanttChart": {
+        "prefix": "gantt",
+        "body": [
+            "gantt",
+            "\ttitle A Gantt Diagram",
+            "\tdateFormat  YYYY-MM-DD",
+            "\tsection Section",
+            "\t\tA task           :a1, 2014-01-01, 30d",
+            "\t\tAnother task     :after a1, 20d",
+            "\tsection Another",
+            "\t\tTask in sec      :2014-01-12, 12d",
+            "\t\tanother task     :24d"
+        ],
+        "description": "Mermaid Gantt Chart"
+    },
+    "journey": {
+        "prefix": "journey",
+        "body": [
+            "journey",
+            "\ttitle My working day",
+            "\tsection Go to work",
+            "\t\tMake esa: 5: Me",
+            "\t\tGo upstairs: 3: Me",
+            "\t\tDo work: 1: Me, Cat",
+            "\tsection Go home",
+            "\t\tGo downstairs: 5: Me",
+            "\t\t Sit down: 3: Me"
+        ],
+        "description": "Mermaid Journey"
+    },
+    "gitGraph": {
+        "prefix": "git",
+        "body": [
+            "gitGraph",
+            "\tcommit",
+            "\tcommit",
+            "\tbranch develop",
+            "\tcheckout develop",
+            "\tcommit",
+            "\tcommit",
+            "\tcheckout main",
+            "\tmerge develop",
+            "\tcommit"
+        ],
+        "description": "Mermaid gitGraph"
+    },
+    "pie": {
+        "prefix": "pie",
+        "body": [
+            "pie title Pets adopted by volunteers",
+            "\t\"Dogs\" : 386",
+            "\t\"Cats\" : 85",
+            "\t\"Rats\" : 15"
+        ],
+        "description": "Mermaid Pie"
+    },
+    "mindmap": {
+        "prefix": "mindmap",
+        "body": [
+            "mindmap",
+              "\troot((mindmap))",
+                "\t\tOrigins",
+                  "\t\t\tLong history",
+                  "\t\t\t::icon(fa fa-book)",
+                  "\t\t\tPopularisation",
+                    "\t\t\t\tBritish popular psychology author Tony Buzan",
+                "\t\tResearch",
+                  "\t\t\tOn effectiveness<br/>and features",
+                  "\t\t\tOn Automatic creation",
+                    "\t\t\t\tUses",
+                        "\t\t\t\t\tCreative techniques",
+                        "\t\t\t\t\tStrategic planning",
+                        "\t\t\t\t\tArgument mapping",
+                "\t\tTools",
+                  "\t\t\tPen and paper",
+                  "\t\t\tMermaid"
+        ],
+        "description": "Mermaid mindmap"
+    },
+    "quadrant": {
+        "prefix": "quadrant",
+        "body": [
+            "quadrantChart",
+                "\ttitle Reach and engagement of campaigns",
+                "\tx-axis Low Reach --> High Reach",
+                "\ty-axis Low Engagement --> High Engagement",
+                "\tquadrant-1 We should expand",
+                "\tquadrant-2 Need to promote",
+                "\tquadrant-3 Re-evaluate",
+                "\tquadrant-4 May be improved",
+                "\tCampaign A: [0.3, 0.6]",
+                "\tCampaign B: [0.45, 0.23]",
+                "\tCampaign C: [0.57, 0.69]",
+                "\tCampaign D: [0.78, 0.34]",
+                "\tCampaign E: [0.40, 0.34]",
+                "\tCampaign F: [0.35, 0.78]"
+        ],
+        "description": "Mermaid quadrant"
+    },
+    "xyChart": {
+        "prefix": "xychart",
+        "body": [
+            "xychart-beta title \"Sales Revenue\"",
+            "\tx-axis [jan, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec]",
+            "\ty-axis \"Revenue (in \\$)\" 4000 --> 11000",
+            "\tbar [5000, 6000, 7500, 8200, 9500, 10500, 11000, 10200, 9200, 8500, 7000, 6000]",
+            "\tline [5000, 6000, 7500, 8200, 9500, 10500, 11000, 10200, 9200, 8500, 7000, 6000]"
+        ],
+        "description": "Mermaid xyChart"
+    },
+    "block": {
+        "prefix": "block",
+        "body": [
+            "block-beta",
+                "\t\tcolumns 3",
+                "\t\tdoc>\"Document\"]:3",
+                "\t\tspace down1<[\" \"]>(down) space",
+              "\tblock:e:3",
+                      "\t\tl[\"left\"]",
+                      "\t\tm(\"A wide one in the middle\")",
+                      "\t\tr[\"right\"]",
+              "\tend",
+                "\t\tspace down2<[\" \"]>(down) space",
+                "\t\tdb[(\"DB\")]:3",
+                "\t\tspace:3",
+                "\t\tD space C",
+                "\t\tdb --> D",
+                "\t\tC --> db",
+                "\t\tD --> C",
+                "\t\tstyle m fill:#d6d,stroke:#333,stroke-width:4px"
+        ],
+        "description": "Mermaid block"
+    },
+    "packet": {
+        "prefix": "packet",
+        "body": [
+            "---",
+            "title: \"TCP Packet\"",
+            "---",
+            "packet-beta",
+              "0-15: \"Source Port\"",
+              "16-31: \"Destination Port\"",
+              "32-63: \"Sequence Number\"",
+              "64-95: \"Acknowledgment Number\"",
+              "96-99: \"Data Offset\"",
+              "100-105: \"Reserved\"",
+              "106: \"URG\"",
+              "107: \"ACK\"",
+              "108: \"PSH\"",
+              "109: \"RST\"",
+              "110: \"SYN\"",
+              "111: \"FIN\"",
+              "112-127: \"Window\"",
+              "128-143: \"Checksum\"",
+              "144-159: \"Urgent Pointer\"",
+              "160-191: \"(Options and Padding)\"",
+              "192-255: \"Data (variable length)\""
+        ],
+        "description": "Mermaid packet"
     }
 }

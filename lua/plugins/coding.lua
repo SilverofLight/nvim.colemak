@@ -32,7 +32,7 @@ return {
         ['<C-k>'] = { 'select_next', 'fallback' },
       },
       sources = {
-        default = { 'avante', 'lsp', 'path', 'buffer' },
+        default = { 'avante', 'lsp', 'snippets', 'path', 'buffer' },
         providers = {
           avante = {
             module = 'blink-cmp-avante',
