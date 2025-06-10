@@ -88,5 +88,9 @@ return {
     event = "InsertEnter",
     config = true,
   },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = {}
+  }
 
 }
