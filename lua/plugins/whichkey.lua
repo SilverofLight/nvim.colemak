@@ -9,7 +9,8 @@ return {
     triggers = {
       { "t", mode = { "n", "v" } },
       { "g", mode = { "n", "v" } },
-      { "<leader>", mode = { "n", "v" } }
+      { "<leader>", mode = { "n", "v" } },
+      { "z", mode = { "n", "v" } }
     }
   },
   keys = {

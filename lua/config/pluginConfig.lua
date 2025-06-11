@@ -137,6 +137,13 @@ wk.add({
   { "<leader>gw", "<cmd>Gitsigns toggle_word_diff<cr>", desc = "Toggle word diff", mode = "n" },
   { "<leader>gl", "<cmd>Gitsigns toggle_linehl<cr>", desc = "Toggle line highlight", mode = "n" },
   { "<leader>gh", "<cmd>Gitsigns preview_hunk_inline<cr>", desc = "Preview git hunk", mode = "n", icon = " " },
+
+  -- fold
+  { "z", group = "fold", mode = { "n", "v" }, icon = " " },
+  { "zm", require("ufo").closeAllFolds, mode = { "n" }, desc = "Fold all", icon = " " },
+  { "zr", require("ufo").openAllFolds, mode = { "n" }, desc = "Unfold all", icon = " " },
+  { "za", mode = { "n", "v" }, desc = "Fold block", icon = " " },
+  { "zd", mode = { "n", "v" }, desc = "Unfold block", icon = " " },
 })
 
 -- lualine
