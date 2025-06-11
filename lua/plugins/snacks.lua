@@ -8,7 +8,16 @@ return {
       -- or leave it empty to use the default settings
       -- refer to the configuration section below
       doc = {
-        max_height = 20,
+        inline = false
+      }
+    },
+    styles = {
+      snacks_image = {
+        position = "float",
+        relative = "editor",
+        backdrop = false,
+        row = 1,
+        col = 200,
       }
     },
     indent = {
