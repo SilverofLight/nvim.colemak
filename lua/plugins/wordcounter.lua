@@ -1,7 +1,7 @@
 return {
   "SilverofLight/wordcounter.nvim",
   dependencies  = "uga-rosa/utf8.nvim",
-  lazy = true
+  lazy = true,
   cmd = { "WordCount", "WordSelectedCount" },
   opts = {
     allowed_filetypes = { "markdown", "text" },

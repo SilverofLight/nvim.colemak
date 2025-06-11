@@ -105,7 +105,7 @@ wk.add({
   { "<leader>u", group = "Spell", icon = " " },
   { "<leader>f", group = "Telescope, Aerial & lsp" },
   { "<leader>c", group = "Lsp", icon = " " },
-  { "<leader>g", group = "Terminal" },
+  { "<leader>g", group = "Terminal & gitsigns" },
   { "<leader>q", group = "Quit" },
   { "t", group = "Tab" },
   { "gr", group = "Lsp", icon = " ", mode = { "n", "v" } },
@@ -132,6 +132,11 @@ wk.add({
   { "gi", icon = " ", desc = "Last insert position" },
   { "gv", icon = "󰒅 ", desc = "Last visual position" },
   { "<leader>wc", icon = " ", mode = { "n", "v" } },
+
+  -- gitsigns
+  { "<leader>gw", "<cmd>Gitsigns toggle_word_diff<cr>", desc = "Toggle word diff", mode = "n" },
+  { "<leader>gl", "<cmd>Gitsigns toggle_linehl<cr>", desc = "Toggle line highlight", mode = "n" },
+  { "<leader>gh", "<cmd>Gitsigns preview_hunk_inline<cr>", desc = "Preview git hunk", mode = "n", icon = " " },
 })
 
 -- lualine
