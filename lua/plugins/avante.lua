@@ -8,7 +8,7 @@ return {
     opts = {
       provider = "deepseek",
       -- auto_suggestions_provider = "groq_llama8B", -- Since auto-suggestions are a high-frequency operation and therefore expensive, it is recommended to specify an inexpensive provider or even a free provider: copilot
-      vendors = {
+      providers = {
         deepseek = {
           __inherited_from = "openai",
           api_key_name = "DEEPSEEK_API_KEY",
@@ -22,18 +22,22 @@ return {
           endpoint = "https://api.groq.com/openai/v1/",
           model = "qwen-qwq-32b",
           disable_tools = true,
-          max_completion_tokens = 2048,
+          extra_request_body = {
+            max_completion_tokens = 2048,
+          }
         },
         groq_llama70B = {
           __inherited_from = "openai",
           api_key_name = "GROQ_API_KEY",
           endpoint = "https://api.groq.com/openai/v1/",
           -- meta-llama/llama-4-scout-17b-16e-instruct | meta-llama/llama-4-maverick-17b-128e-instruct
-          -- qwen-qwq-32b | deepseek-r1-distill-qwen-32b | deepseek-r1-distill-llama-70b 
+          -- qwen-qwq-32b | deepseek-r1-distill-qwen-32b | deepseek-r1-distill-llama-70b
           -- llama-3.3-70b-versatile | llama-3.1-8b-instant | gemma2-9b-it
           disable_tools = true,
           model = "llama-3.3-70b-versatile",
-          max_completion_tokens = 1024,
+          extra_request_body = {
+            max_completion_tokens = 1024,
+          }
         },
         groq_llama17B_16e = {
           __inherited_from = "openai",
@@ -41,7 +45,9 @@ return {
           endpoint = "https://api.groq.com/openai/v1/",
           model = "meta-llama/llama-4-scout-17b-16e-instruct",
           disable_tools = true,
-          max_completion_tokens = 4096,
+          extra_request_body = {
+            max_completion_tokens = 4096,
+          }
         },
         groq_llama8B = {
           __inherited_from = "openai",
@@ -49,7 +55,9 @@ return {
           endpoint = "https://api.groq.com/openai/v1/",
           model = "llama-3.1-8b-instant",
           disable_tools = true,
-          max_completion_tokens = 4096,
+          extra_request_body = {
+            max_completion_tokens = 4096,
+          }
         }
       },
       behaviour = {
@@ -89,7 +97,7 @@ return {
           edit_user_request = "u",
           switch_windows = "<Tab>",
           reverse_switch_windows = "<S-Tab>",
-          close_from_input = {normal = "<Esc>"}, -- e.g., { normal = "<Esc>", insert = "<C-d>" }
+          close_from_input = { normal = "<Esc>" }, -- e.g., { normal = "<Esc>", insert = "<C-d>" }
         },
       },
     },
