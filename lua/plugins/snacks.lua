@@ -18,6 +18,9 @@ return {
         backdrop = false,
         row = 1,
         col = 200,
+      },
+      zen = {
+        backdrop = { transparent = false }
       }
     },
     indent = {
@@ -71,6 +74,7 @@ return {
         patterns = { "GitSign", "MiniDiffSign" },
       },
       refresh = 50, -- refresh at most every 50ms
-    }
+    },
+    zen = {},
   }
 }

@@ -131,6 +131,7 @@ wk.add({
   { "gw", icon = " " },
   { "gi", icon = " ", desc = "Last insert position" },
   { "gv", icon = "󰒅 ", desc = "Last visual position" },
+  { "gz", "<cmd>lua Snacks.zen()<cr>" , icon = " ", desc = "zen-mode" },
   { "<leader>wc", icon = " ", mode = { "n", "v" } },
 
   -- gitsigns
@@ -139,7 +140,6 @@ wk.add({
   { "<leader>gh", "<cmd>Gitsigns preview_hunk_inline<cr>", desc = "Preview git hunk", mode = "n", icon = " " },
 
   -- fold
-  { "z", group = "fold", mode = { "n", "v" }, icon = " " },
   { "zm", require("ufo").closeAllFolds, mode = { "n" }, desc = "Fold all", icon = " " },
   { "zr", require("ufo").openAllFolds, mode = { "n" }, desc = "Unfold all", icon = " " },
   { "za", mode = { "n", "v" }, desc = "Fold block", icon = " " },
