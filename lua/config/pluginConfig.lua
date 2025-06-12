@@ -15,8 +15,8 @@ vim.keymap.set('n', 'gd', "<cmd>lua vim.lsp.buf.definition()<CR>", { desc = "Got
 vim.keymap.set('n', '<leader>ca', "<cmd>lua vim.lsp.buf.code_action()<CR>", { desc = "Code action" })
 vim.keymap.set('n', '<leader>r', "<cmd>lua vim.lsp.buf.rename()<CR>", { desc = "Lsp Rename" })
 -- vim.keymap.set('n', 'gh', "<cmd>lua vim.lsp.buf.hover()<CR>", { desc = "Lsp Hover" })
-vim.keymap.set('n', 'gh', function ()
-    vim.lsp.buf.hover({
+vim.keymap.set('n', 'gh', function()
+  vim.lsp.buf.hover({
     border = "rounded"
   })
 end, { desc = "Lsp Hover" })
@@ -131,7 +131,7 @@ wk.add({
   { "gw", icon = " " },
   { "gi", icon = " ", desc = "Last insert position" },
   { "gv", icon = "󰒅 ", desc = "Last visual position" },
-  { "gz", "<cmd>lua Snacks.zen()<cr>" , icon = " ", desc = "zen-mode" },
+  { "gz", "<cmd>lua Snacks.zen()<cr>", icon = " ", desc = "zen-mode" },
   { "<leader>wc", icon = " ", mode = { "n", "v" } },
 
   -- gitsigns
@@ -150,11 +150,21 @@ wk.add({
 require("lualine").setup {
   options = { theme = 'dracula-nvim' },
   sections = {
-    lualine_a = {'mode'},
-    lualine_b = {'branch', 'diff', 'diagnostics'},
-    lualine_c = {'filename'},
-    lualine_x = {require("wordcounter").count_cur_buf_words,'encoding', 'fileformat', 'filetype'},
-    lualine_y = {'progress'},
-    lualine_z = {'location'}
+    lualine_a = { 'mode' },
+    lualine_b = { 'branch', 'diff', 'diagnostics' },
+    lualine_c = { 'filename' },
+    lualine_x = {
+      function ()
+        if vim.bo.filetype == "markdown" then
+          return require("wordcounter").count_cur_buf_words()
+        end
+        return ""
+      end,
+      'encoding',
+      'fileformat',
+      'filetype'
+    },
+    lualine_y = { 'progress' },
+    lualine_z = { 'location' }
   },
 }
