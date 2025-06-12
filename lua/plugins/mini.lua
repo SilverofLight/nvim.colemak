@@ -12,14 +12,14 @@ return {
     version = '*',
     config = function()
       require("mini.ai").setup({
-        mappings = {
-          inside = ";",
-
-          around_next = 'an',
-          inside_next = ';n',
-          around_last = 'al',
-          inside_last = ';l',
-        }
+        -- mappings = {
+        --   inside = ";",
+        --
+        --   around_next = 'an',
+        --   inside_next = ';n',
+        --   around_last = 'al',
+        --   inside_last = ';l',
+        -- }
       })
     end
   },

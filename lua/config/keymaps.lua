@@ -112,6 +112,10 @@ key.set("v", "<C-l>", "<C-u>")
 
 key.set("n", "<C-j>", "<C-i>")
 
+-- arround & in
+key.set("n", "c;", "ci")
+key.set("n", "d;", "di")
+
 -- tab
 key.set("n", "tu", "<cmd>tabnew<cr>", { desc = "Tabnew" })
 key.set("n", "N", "<cmd>tabprevious<cr>")
