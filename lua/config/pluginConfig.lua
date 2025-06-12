@@ -144,6 +144,18 @@ wk.add({
   { "zr", require("ufo").openAllFolds, mode = { "n" }, desc = "Unfold all", icon = " " },
   { "za", mode = { "n", "v" }, desc = "Fold block", icon = " " },
   { "zd", mode = { "n", "v" }, desc = "Unfold block", icon = " " },
+
+  {
+    "td",
+    function ()
+      if require("snacks.dim").enabled then
+        Snacks.dim.disable()
+      else
+        Snacks.dim.enable()
+      end
+    end,
+    desc = "Toggle Dimming",
+  }
 })
 
 -- lualine
