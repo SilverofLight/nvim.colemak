@@ -2,7 +2,7 @@
 return {
   "folke/snacks.nvim",
   ---@type snacks.Config
-  event = "UIEnter",
+  event = "UIEnter", -- if Verylazy then cannt open kitty-scrollback end
   opts = {
     image = {
       -- your image configuration comes here

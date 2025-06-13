@@ -23,6 +23,11 @@ return {
     vim.keymap.set({ 'n' }, 'Y', '<Plug>(KsbNormalYankEnd)', {})
     vim.keymap.set({ 'n' }, 'y', '<Plug>(KsbNormalYank)', {})
     vim.keymap.set({ 'n' }, 'yy', '<Plug>(KsbYankLine)', {})
+    vim.keymap.set({ 'v' }, '<leader>y', 'y', {})
+    vim.keymap.set({ 'v' }, '<leader>Y', 'Y', {})
+    vim.keymap.set({ 'n' }, '<leader>y', 'y', {})
+    vim.keymap.set({ 'n' }, '<leader>yy', 'yy', {})
+    vim.keymap.set({ 'n' }, '<leader>Y', 'Y', {})
     require('kitty-scrollback').setup()
   end
 }
