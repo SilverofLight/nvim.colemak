@@ -72,7 +72,7 @@ wk.add({
   { "<leader>x", group = "Trouble", icon = "󱪊 " },
   { "<leader>w", group = "Warp & Save", icon = " " },
   { "<leader>u", group = "Spell", icon = " " },
-  { "<leader>f", group = "Telescope, Aerial & lsp" },
+  { "<leader>f", group = "Search, Aerial & format" },
   { "<leader>c", group = "Lsp", icon = " " },
   { "<leader>g", group = "Terminal & gitsigns" },
   { "<leader>q", group = "Quit" },
@@ -88,6 +88,7 @@ wk.add({
   { "gu", hidden = true, mode = { "n", "v" } },
   { "gU", hidden = true, mode = { "n", "v" } },
   { "gS", hidden = true, mode = { "v" } },
+  { "<leader>fa", "<cmd>GrugFar<cr>", desc = "grug-far", icon = " " },
 
   { "<leader>a", icon = " " },
   { "<leader>o", icon = "󰛔 " },
