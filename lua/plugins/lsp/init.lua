@@ -13,6 +13,7 @@ return {
   -- },
   {
     'neovim/nvim-lspconfig',
+    event = {"UIEnter"},
     dependencies = {
       'saghen/blink.cmp',
       "mason.nvim",
@@ -48,6 +49,7 @@ return {
   },
   {
     "williamboman/mason-lspconfig.nvim",
+    event = {"UIEnter"},
     config = function()
       require("mason-lspconfig").setup()
     end

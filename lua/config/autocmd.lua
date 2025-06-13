@@ -31,6 +31,14 @@ vim.api.nvim_create_autocmd("BufNewFile", {
   end,
 })
 
+-- Start lsp after everything is loaded
+vim.api.nvim_create_autocmd("User", {
+  pattern = "VeryLazy",
+  callback = function ()
+    vim.cmd("LspStart")
+  end
+})
+
 -- close some filetypes with <q>
 vim.api.nvim_create_autocmd("FileType", {
   group = augroup("close_with_q"),

@@ -90,6 +90,7 @@ return {
   },
   {
     "nvim-treesitter/nvim-treesitter",
+    event = "UIEnter",
     opts = {}
   }
 

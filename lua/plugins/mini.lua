@@ -2,6 +2,7 @@ return {
   {
     'echasnovski/mini.cursorword',
     version = '*',
+    event = "VeryLazy",
     config = function()
       require('mini.cursorword').setup()
     end
@@ -9,17 +10,18 @@ return {
   {
     'echasnovski/mini.ai',
     lazy = true,
+    event = "VeryLazy",
     version = '*',
     config = function()
       require("mini.ai").setup({
-        -- mappings = {
-        --   inside = ";",
-        --
-        --   around_next = 'an',
-        --   inside_next = ';n',
-        --   around_last = 'al',
-        --   inside_last = ';l',
-        -- }
+        mappings = {
+          inside = ";",
+
+          around_next = 'an',
+          inside_next = ';n',
+          around_last = 'al',
+          inside_last = ';l',
+        }
       })
     end
   },

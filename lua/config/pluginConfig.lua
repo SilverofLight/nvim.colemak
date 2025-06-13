@@ -59,37 +59,6 @@ vim.diagnostic.config({
 
 --- buffer line
 vim.opt.termguicolors = true,
-    require("bufferline").setup {}
-
--- git signs
-require('gitsigns').setup {
-  on_attach = function(bufnr)
-    local gitsigns = require('gitsigns')
-
-    local function map(mode, l, r, opts)
-      opts = opts or {}
-      opts.buffer = bufnr
-      vim.keymap.set(mode, l, r, opts)
-    end
-
-    -- Navigation
-    map('n', ']c', function()
-      if vim.wo.diff then
-        vim.cmd.normal({ ']c', bang = true })
-      else
-        gitsigns.nav_hunk('next')
-      end
-    end)
-
-    map('n', '[c', function()
-      if vim.wo.diff then
-        vim.cmd.normal({ '[c', bang = true })
-      else
-        gitsigns.nav_hunk('prev')
-      end
-    end)
-  end
-}
 
 -- avante
 vim.keymap.set("n", "ta", "<cmd>AvanteToggle<CR>", { desc = "Toggle Avante" })
@@ -107,6 +76,7 @@ wk.add({
   { "<leader>c", group = "Lsp", icon = " " },
   { "<leader>g", group = "Terminal & gitsigns" },
   { "<leader>q", group = "Quit" },
+  { "<leader>l", "<cmd>Lazy<cr>", icon = "󰒲 " },
   { "t", group = "Tab" },
   { "gr", group = "Lsp", icon = " ", mode = { "n", "v" } },
   { "gT", hidden = true, mode = { "n", "v" } },
@@ -157,26 +127,3 @@ wk.add({
     desc = "Toggle Dimming",
   }
 })
-
--- lualine
-require("lualine").setup {
-  options = { theme = 'dracula-nvim' },
-  sections = {
-    lualine_a = { 'mode' },
-    lualine_b = { 'branch', 'diff', 'diagnostics' },
-    lualine_c = { 'filename' },
-    lualine_x = {
-      function ()
-        if vim.bo.filetype == "markdown" then
-          return require("wordcounter").count_cur_buf_words()
-        end
-        return ""
-      end,
-      'encoding',
-      'fileformat',
-      'filetype'
-    },
-    lualine_y = { 'progress' },
-    lualine_z = { 'location' }
-  },
-}

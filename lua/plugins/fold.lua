@@ -5,6 +5,7 @@ vim.o.foldenable = true
 
 return {
 	"kevinhwang91/nvim-ufo",
+  event = "VeryLazy",
 	dependencies = "kevinhwang91/promise-async",
 	config = function()
 		-- Option 2: nvim lsp as LSP client
