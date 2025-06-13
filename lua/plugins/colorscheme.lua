@@ -28,4 +28,9 @@ return {
 
   -- duacula
   { "Mofiqul/dracula.nvim" },
+  {
+    "norcalli/nvim-colorizer.lua",
+    event = "VeryLazy",
+    opts = {}
+  },
 }

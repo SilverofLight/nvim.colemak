@@ -1,5 +1,7 @@
 local opt = vim.opt
 
+opt.tgc = true
+
 -- 行号
 opt.relativenumber = true
 opt.number = true

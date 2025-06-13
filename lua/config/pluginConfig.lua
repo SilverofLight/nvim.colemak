@@ -117,7 +117,7 @@ wk.add({
 
   {
     "td",
-    function ()
+    function()
       if require("snacks.dim").enabled then
         Snacks.dim.disable()
       else
@@ -125,5 +125,6 @@ wk.add({
       end
     end,
     desc = "Toggle Dimming",
-  }
+  },
+  { "tc", "<cmd>ColorizerToggle<cr>", desc = "Toggle Colorizea", icon = " " }
 })
