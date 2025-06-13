@@ -2,7 +2,7 @@
 return {
   "folke/snacks.nvim",
   ---@type snacks.Config
-  event = "VeryLazy",
+  event = "UIEnter",
   opts = {
     image = {
       -- your image configuration comes here
