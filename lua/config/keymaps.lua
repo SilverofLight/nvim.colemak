@@ -68,7 +68,14 @@ key.set("v", "n", "gj")
 key.set("v", "e", "gk")
 
 -- better jk
-key.set({ "n", "x" }, "n", "v:count == 0 ? 'gj' : 'j'", { desc = "Down", expr = true, silent = true })
+key.set({ "n", "x" }, "n", function()
+  if vim.fn.line(".") == vim.fn.line("$") then
+    return vim.api.nvim_replace_termcodes("<C-e>", true, true, true)
+  elseif vim.v.count == 0 then
+    return "gj"
+  else return "j"
+  end
+end, { desc = "Down (scroll if at EOF)", expr = true, silent = true })
 key.set({ "n", "x" }, "e", "v:count == 0 ? 'gk' : 'k'", { desc = "Up", expr = true, silent = true })
 
 key.set("n", "i", "l")
