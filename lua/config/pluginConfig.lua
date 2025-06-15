@@ -116,6 +116,7 @@ wk.add({
   { "za", mode = { "n", "v" }, desc = "Fold block", icon = " " },
   { "zd", mode = { "n", "v" }, desc = "Unfold block", icon = " " },
 
+  -- dim
   {
     "td",
     function()
@@ -127,5 +128,10 @@ wk.add({
     end,
     desc = "Toggle Dimming",
   },
-  { "tc", "<cmd>ColorizerToggle<cr>", desc = "Toggle Colorizea", icon = " " }
+
+  -- colorizea
+  { "tc", "<cmd>ColorizerToggle<cr>", desc = "Toggle Colorizea", icon = " " },
+
+  -- virtual cursor
+  { "ga", "<Plug>(VM-Select-All)", desc = "Virtual Cursor Select All", icon = " " }
 })
