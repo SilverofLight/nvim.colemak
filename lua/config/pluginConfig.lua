@@ -88,7 +88,7 @@ wk.add({
   { "gu", hidden = true, mode = { "n", "v" } },
   { "gU", hidden = true, mode = { "n", "v" } },
   { "gS", hidden = true, mode = { "v" } },
-  { "<leader>fa", "<cmd>GrugFar<cr>", desc = "grug-far", icon = " " },
+  { "<leader>gs", "<cmd>GrugFar<cr>", desc = "grug-far", icon = " " },
 
   { "<leader>a", icon = " " },
   { "<leader>o", icon = "󰛔 " },
