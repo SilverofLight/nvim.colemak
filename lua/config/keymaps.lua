@@ -5,7 +5,16 @@ vim.g.mapleader = " "
 -- key.set("i", "<C-e>", "<Esc>A")
 -- key.set("i", "<C-a>", "<Esc>I")
 key.set("i", "<C-q>", "<++>")
-key.set("i", "<esc>", "<esc>")
+local function esc_fcitx()
+  if vim.fn.executable('fcitx5-remote') == 1 then
+    local corrent = vim.fn.system('fcitx5-remote -n')
+    if not corrent:match("keyboard-us") then
+      vim.fn.system('fcitx5-remote -c "keyboard-us"')
+    end
+  end
+  return "<esc>"
+end
+key.set("i", "<esc>", esc_fcitx, {expr = true})
 key.set("n", "<esc>", "<cmd>nohl<CR>")
 key.set("n", "S", "<cmd>w<CR>")
 
@@ -73,7 +82,8 @@ key.set({ "n", "x" }, "n", function()
     return vim.api.nvim_replace_termcodes("<C-e>", true, true, true)
   elseif vim.v.count == 0 then
     return "gj"
-  else return "j"
+  else
+    return "j"
   end
 end, { desc = "Down (scroll if at EOF)", expr = true, silent = true })
 key.set({ "n", "x" }, "e", "v:count == 0 ? 'gk' : 'k'", { desc = "Up", expr = true, silent = true })
@@ -134,21 +144,21 @@ key.set("v", "s", "<cmd>HopWord<CR>")
 
 -- togglewrap
 function ToggleWrap()
-    if vim.opt.wrap:get() then
-        vim.opt.wrap = false
-    else
-        vim.opt.wrap = true
-    end
+  if vim.opt.wrap:get() then
+    vim.opt.wrap = false
+  else
+    vim.opt.wrap = true
+  end
 end
 
 key.set("n", "<leader>wr", [[<cmd>lua ToggleWrap()<CR>]], { desc = "Toggle Wrap" })
 
 function ToggleSpell()
-    if vim.opt.spell:get() then
-        vim.opt.spell = false
-    else
-        vim.opt.spell = true
-    end
+  if vim.opt.spell:get() then
+    vim.opt.spell = false
+  else
+    vim.opt.spell = true
+  end
 end
 
 key.set("n", "<leader>us", [[<cmd>lua ToggleSpell()<CR>]], { desc = "Toggle Spell" })
