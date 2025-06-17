@@ -1,9 +1,6 @@
 local key = vim.keymap
 vim.g.mapleader = " "
 
--- key.set("i", "jk", "<ESC>")
--- key.set("i", "<C-e>", "<Esc>A")
--- key.set("i", "<C-a>", "<Esc>I")
 key.set("i", "<C-q>", "<++>")
 local function esc_fcitx()
   if vim.fn.executable('fcitx5-remote') == 1 then
@@ -14,7 +11,7 @@ local function esc_fcitx()
   end
   return "<esc>"
 end
-key.set("i", "<esc>", esc_fcitx, {expr = true})
+key.set("i", "<esc>", esc_fcitx, { expr = true })
 key.set("n", "<esc>", "<cmd>nohl<CR>")
 key.set("n", "S", "<cmd>w<CR>")
 
@@ -78,14 +75,22 @@ key.set("v", "e", "gk")
 
 -- better jk
 key.set({ "n", "x" }, "n", function()
-  if vim.fn.line(".") == vim.fn.line("$") then
-    return vim.api.nvim_replace_termcodes("<C-e>", true, true, true)
-  elseif vim.v.count == 0 then
-    return "gj"
-  else
-    return "j"
-  end
-end, { desc = "Down (scroll if at EOF)", expr = true, silent = true })
+  local count = vim.v.count
+  local prev_line = vim.fn.line(".")
+  local prev_winline = vim.fn.winline()
+
+  -- schedule make this function run after the parent function ended
+  vim.schedule(function()
+    if vim.fn.line(".") == prev_line and vim.fn.winline() == prev_winline then
+      vim.api.nvim_feedkeys(
+        vim.api.nvim_replace_termcodes("<C-e>", true, false, true),
+        "n", true
+      )
+    end
+  end)
+  return (count == 0) and "gj" or "j"
+end, { desc = "Down (scroll if stuck)", expr = true, silent = true })
+
 key.set({ "n", "x" }, "e", "v:count == 0 ? 'gk' : 'k'", { desc = "Up", expr = true, silent = true })
 
 key.set("n", "i", "l")
