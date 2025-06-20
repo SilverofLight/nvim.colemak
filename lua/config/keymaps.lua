@@ -14,6 +14,8 @@ end
 key.set("i", "<esc>", esc_fcitx, { expr = true })
 key.set("n", "<esc>", "<cmd>nohl<CR>")
 key.set("n", "S", "<cmd>w<CR>")
+key.set("n", "<C-s>", "<cmd>w<CR>")
+key.set("i", "<C-s>", "<cmd>w<CR>")
 
 -- disable q
 key.set('n', 'Q', "q")
