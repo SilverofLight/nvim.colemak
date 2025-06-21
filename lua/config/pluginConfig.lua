@@ -132,6 +132,11 @@ wk.add({
   -- colorizea
   { "tc", "<cmd>ColorizerToggle<cr>", desc = "Toggle Colorizea", icon = " " },
 
-  -- virtual cursor
-  { "ga", "<Plug>(VM-Select-All)", desc = "Virtual Cursor Select All", icon = " " }
+  -- multicursor
+  { "<leader><up>", desc = "Multcursor ignore line", icon = "󰇀 " },
+  { "<leader><down>", desc = "Multcursor ignore line", icon = "󰇀 " },
+  { "<leader>k", desc = "Multcursor next", icon = "󰇀 " },
+  { "<leader>m", desc = "Multcursor ignore next", icon = "󰇀 " },
+  { "<leader>K", desc = "Multcursor pre", icon = "󰇀 " },
+  { "<leader>M", desc = "Multcursor ignore pre", icon = "󰇀 " },
 })
