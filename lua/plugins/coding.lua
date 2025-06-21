@@ -41,7 +41,14 @@ return {
               -- opts for blink-cmp-avante
             }
           },
-          codeium = { name = 'Codeium', module = 'codeium.blink', async = true }
+          codeium = {
+            name = 'Codeium',
+            module = 'codeium.blink',
+            async = true,
+            enabled = function()
+              return vim.bo.filetype ~= 'markdown'
+            end
+          }
         }
       },
 
