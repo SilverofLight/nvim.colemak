@@ -350,11 +350,6 @@
         "body": "\\cdot",
         "description": "\\cdot点"
     },
-    "sqrt": {
-        "prefix": "\\sqrt",
-        "body": "\\sqrt[]{ <++> }",
-        "description": "\\sqrt根号"
-    },
     "cdots": {
         "prefix": "\\cdots",
         "body": "\\cdots",
