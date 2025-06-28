@@ -39,6 +39,13 @@ vim.api.nvim_create_autocmd("User", {
   end
 })
 
+--- fix: no highlight in new buffer
+vim.api.nvim_create_autocmd("BufNew", {
+  callback = function ()
+    vim.cmd("TSEnable highlight")
+  end
+})
+
 -- close some filetypes with <q>
 vim.api.nvim_create_autocmd("FileType", {
   group = augroup("close_with_q"),
