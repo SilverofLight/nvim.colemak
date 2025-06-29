@@ -139,4 +139,7 @@ wk.add({
   { "<leader>m", desc = "Multcursor ignore next", icon = "󰇀 " },
   { "<leader>K", desc = "Multcursor pre", icon = "󰇀 " },
   { "<leader>M", desc = "Multcursor ignore pre", icon = "󰇀 " },
+
+  --- mpv
+  {"<leader>v", group = "MpvNote", icon = " "}
 })
