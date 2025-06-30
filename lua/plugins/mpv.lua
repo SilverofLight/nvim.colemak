@@ -1,14 +1,17 @@
 return {
   "SilverofLight/MpvNote.nvim",
   lazy = true,
-  cmd = { "MpvCopyStamp", "MpvPasteStamp", "MpvOpenStamp" },
+  cmd = { "MpvCopyStamp", "MpvPasteStamp", "MpvOpenStamp", "MpvHover" },
   opts = {
     socket = "/tmp/mpvsocket",
-    clipboard_cmd = "wl-copy"
+    clipboard_cmd = "wl-copy",
+    width = nil,
+    height = nil
   },
 
   -- set your keybindings below
   vim.keymap.set("n", "<leader>vc", "<cmd>MpvCopyStamp<CR>", { desc = "Copy Mpv Note" }),
   vim.keymap.set("n", "<leader>vp", "<cmd>MpvPasteStamp<CR>", { desc = "Paste Mpv Note" }),
-  vim.keymap.set("n", "<leader>vo", "<cmd>MpvOpenStamp<CR>", { desc = "Open Mpv Note" })
+  vim.keymap.set("n", "<leader>vo", "<cmd>MpvOpenStamp<CR>", { desc = "Open Mpv Note" }),
+  vim.keymap.set("n", "<leader>vh", "<cmd>MpvHover<CR>", { desc = "Mpv Hover" })
 }
