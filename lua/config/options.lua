@@ -37,7 +37,7 @@ opt.smartcase = true
 opt.termguicolors = true
 opt.signcolumn = "yes"
 vim.cmd([[colorscheme dracula]])
-vim.api.nvim_set_hl(0, '@markup.heading.1.markdown', { fg = '#d19a66', bold = true }) 
+vim.api.nvim_set_hl(0, '@markup.heading.1.markdown', { fg = '#4ee678', bold = true })
 
 -- 留下 5 行
 opt.scrolloff = 5
