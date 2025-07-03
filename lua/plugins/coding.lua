@@ -113,7 +113,7 @@ return {
       -- 'always' means to always do autozz when buffer text changes.
       -- 'empty'  means to do autozz only when the current line contains whitespaces.
       -- 'never'  means do not autozz. If you choose never, you should enable autopairs.
-      when = 'empty',
+      when = 'always',
       -- plugin support
       plugins = {
         -- auto center when pressing enter inside specific brackets
