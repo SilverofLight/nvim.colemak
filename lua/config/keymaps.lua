@@ -21,10 +21,7 @@ key.set("i", "<C-s>", "<cmd>w<CR>")
 key.set('n', 'Q', "q")
 key.set('n', 'q', "<nop>")
 
--- key.set("n", "s", "<nop>")
-
 key.set("n", "<leader>o", "/<++><CR><cmd>nohl<CR>c4l", { desc = "replace next <++>" })
--- key.set("n", "<leader>i", "?<++><CR><cmd>nohl<CR>c4l")
 
 -- quick quit
 key.set("n", "<leader>qq", "<cmd>quitall<cr>", { desc = "Quitall" })

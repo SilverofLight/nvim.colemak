@@ -100,11 +100,4 @@ return {
     "nvim-treesitter/nvim-treesitter",
     opts = {}
   },
-
-  {
-    'Aasim-A/scrollEOF.nvim',
-    event = { 'CursorMoved', 'WinScrolled' },
-    opts = {},
-  }
-
 }
