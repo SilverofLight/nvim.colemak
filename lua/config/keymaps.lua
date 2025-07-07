@@ -21,7 +21,28 @@ key.set("i", "<C-s>", "<cmd>w<CR>")
 key.set('n', 'Q', "q")
 key.set('n', 'q', "<nop>")
 
-key.set("n", "<leader>o", "/<++><CR><cmd>nohl<CR>c4l", { desc = "replace next <++>" })
+-- 定义替换函数
+function replace_next_placeholder()
+  local original_state = not vim.g.minianimate_disable
+
+  vim.g.minianimate_disable = true
+
+  local found_line = vim.fn.search('<++>')
+  if found_line > 0 then
+    vim.cmd('nohlsearch')
+    vim.api.nvim_feedkeys('c4l', 'n', false)
+  else
+    vim.fn.setpos('.', save_cursor)
+    vim.notify("No placeholder found", vim.log.levels.INFO)
+  end
+
+  vim.defer_fn(function()
+    vim.g.minianimate_disable = not original_state
+  end, 50)
+end
+
+-- 设置快捷键
+key.set("n", "<leader>o", replace_next_placeholder, { desc = "replace next <++>" })
 
 -- quick quit
 key.set("n", "<leader>qq", "<cmd>quitall<cr>", { desc = "Quitall" })
