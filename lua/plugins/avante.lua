@@ -6,7 +6,7 @@ return {
     cmd = "AvanteToggle",
     version = false, -- set this if you want to always pull the latest change
     opts = {
-      provider = "deepseek",
+      provider = "gemini",
       -- auto_suggestions_provider = "groq_llama8B", -- Since auto-suggestions are a high-frequency operation and therefore expensive, it is recommended to specify an inexpensive provider or even a free provider: copilot
       providers = {
         deepseek = {
@@ -15,6 +15,12 @@ return {
           endpoint = "https://api.deepseek.com",
           model = "deepseek-coder",
           disable_tools = true,
+        },
+        gemini = {
+          -- __inherited_from = "openai",
+          api_key_name = "GEMINI_API",
+          -- endpoint = "https://generativelanguage.googleapis.com/v1beta",
+          model = "gemini-2.0-flash",
         },
         groq_qwen = {
           __inherited_from = "openai",

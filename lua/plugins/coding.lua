@@ -46,7 +46,7 @@ return {
             module = 'codeium.blink',
             async = true,
             enabled = function()
-              return vim.bo.filetype ~= 'markdown'
+              return vim.bo.filetype ~= 'markdown' and vim.bo.filetype ~= 'AvanteInput'
             end
           }
         }

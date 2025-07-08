@@ -21,7 +21,6 @@ key.set("i", "<C-s>", "<cmd>w<CR>")
 key.set('n', 'Q', "q")
 key.set('n', 'q', "<nop>")
 
--- 定义替换函数
 function replace_next_placeholder()
   local original_state = not vim.g.minianimate_disable
 
@@ -41,7 +40,6 @@ function replace_next_placeholder()
   end, 50)
 end
 
--- 设置快捷键
 key.set("n", "<leader>o", replace_next_placeholder, { desc = "replace next <++>" })
 
 -- quick quit
