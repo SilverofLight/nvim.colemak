@@ -29,7 +29,7 @@ function replace_next_placeholder()
   local found_line = vim.fn.search('<++>')
   if found_line > 0 then
     vim.cmd('nohlsearch')
-    vim.api.nvim_feedkeys('c4l', 'n', false)
+    vim.api.nvim_feedkeys('"vc4l', 'n', false)
   else
     vim.fn.setpos('.', save_cursor)
     vim.notify("No placeholder found", vim.log.levels.INFO)
