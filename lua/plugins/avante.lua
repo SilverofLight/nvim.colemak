@@ -18,7 +18,7 @@ return {
         },
         gemini = {
           -- __inherited_from = "openai",
-          api_key_name = "GEMINI_API",
+          api_key_name = "GEMINI_API_KEY",
           -- endpoint = "https://generativelanguage.googleapis.com/v1beta",
           model = "gemini-2.0-flash",
         },
