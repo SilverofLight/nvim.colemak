@@ -102,12 +102,12 @@ wk.add({
   { "gw", icon = " " },
   { "gi", icon = " ", desc = "Last insert position" },
   { "gv", icon = "󰒅 ", desc = "Last visual position" },
-  { "gz", "<cmd>lua Snacks.zen()<cr>", icon = " ", desc = "zen-mode" },
+  { "tz", "<cmd>lua Snacks.zen()<cr>",  desc = "Toggle zen-mode" },
   { "<leader>wc", icon = " ", mode = { "n", "v" } },
 
   -- gitsigns
-  { "<leader>gw", "<cmd>Gitsigns toggle_word_diff<cr>", desc = "Toggle word diff", mode = "n" },
-  { "<leader>gl", "<cmd>Gitsigns toggle_linehl<cr>", desc = "Toggle line highlight", mode = "n" },
+  { "tw", "<cmd>Gitsigns toggle_word_diff<cr>", desc = "Toggle word diff", mode = "n" },
+  { "tl", "<cmd>Gitsigns toggle_linehl<cr>", desc = "Toggle line highlight", mode = "n" },
   { "<leader>gh", "<cmd>Gitsigns preview_hunk_inline<cr>", desc = "Preview git hunk", mode = "n", icon = " " },
 
   -- fold
@@ -130,7 +130,7 @@ wk.add({
   },
 
   -- colorizea
-  { "tc", "<cmd>ColorizerToggle<cr>", desc = "Toggle Colorizea", icon = " " },
+  { "tc", "<cmd>ColorizerToggle<cr>", desc = "Toggle Colorizea" },
 
   -- multicursor
   { "<leader><up>", desc = "Multcursor ignore line", icon = "󰇀 " },
