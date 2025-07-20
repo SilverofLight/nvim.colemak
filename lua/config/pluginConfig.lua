@@ -102,7 +102,6 @@ wk.add({
   { "gw", icon = " " },
   { "gi", icon = " ", desc = "Last insert position" },
   { "gv", icon = "󰒅 ", desc = "Last visual position" },
-  { "tz", "<cmd>lua Snacks.zen()<cr>",  desc = "Toggle zen-mode" },
   { "<leader>wc", icon = " ", mode = { "n", "v" } },
 
   -- gitsigns
@@ -141,5 +140,21 @@ wk.add({
   { "<leader>M", desc = "Multcursor ignore pre", icon = "󰇀 " },
 
   --- mpv
-  {"<leader>v", group = "MpvNote", icon = " "}
+  { "<leader>v", group = "MpvNote", icon = " " }
 })
+
+local Snacks = require("snacks")
+Snacks.toggle({
+  id = "zen",
+  name = "Zen Mode",
+  get = function()
+    return Snacks.zen.win and Snacks.zen.win:valid() or false
+  end,
+  set = function(state)
+    if state then
+      Snacks.zen()
+    elseif Snacks.zen.win then
+      Snacks.zen.win:close()
+    end
+  end,
+}):map("tz")
