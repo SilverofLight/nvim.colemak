@@ -179,11 +179,6 @@ key.set("n", "<leader>bc", "<cmd>BufferLinePickClose<CR>", { desc = "Buffer pick
 key.set("n", "<leader>bp", "<cmd>BufferLinePick<CR>", { desc = "Buffer pick" })
 key.set("n", "<leader>bd", "<cmd>bdelete<CR>", { desc = "Buffer delete" })
 
--- Telescope
-vim.keymap.set('n', '<leader><leader>', "<cmd>Telescope find_files<CR>", { desc = 'Telescope find files' })
-vim.keymap.set('n', '<leader>ff', "<cmd>Telescope live_grep<CR>", { desc = 'Telescope find contents' })
-vim.keymap.set('n', '<leader>fg', "<cmd>Telescope git_files<CR>", { desc = 'Telescope find files in git' })
-
 -- lean
 -- vim.keymap.set('i', '<C-o>', '<ESC>o(<ESC>klywjp<C-a>a: )<ESC>i')
 -- notify history

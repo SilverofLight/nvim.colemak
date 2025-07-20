@@ -79,5 +79,10 @@ return {
     zen = {},
     dim = {},
     bigfile = {},
+    picker = {},
+  },
+  keys = {
+    { "<leader><space>", function() Snacks.picker.smart() end, desc = "Smart Find Files" },
+    { "<leader>/", function() Snacks.picker.grep() end, desc = "Grep" },
   }
 }

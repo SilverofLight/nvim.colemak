@@ -16,5 +16,5 @@ return {
     -- },
     -- INFO:
   },
-  vim.keymap.set("n", "gt", "<cmd>TodoTelescope<cr>", { desc = "Telescope TODO" })
+  vim.keymap.set("n", "gt", function () Snacks.picker.todo_comments() end, { desc = "Telescope TODO" })
 }
