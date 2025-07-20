@@ -70,5 +70,6 @@ opt.undolevels = 10000
 -- confirm to save changes
 opt.confirm = true
 
--- notify
--- vim.notify = require("notify")
+-- :hi Visual term=reverse cterm=reverse guibg=Grey
+vim.api.nvim_set_hl(0, "Visual", {reverse = true})
+
