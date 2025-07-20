@@ -105,8 +105,9 @@ wk.add({
   { "<leader>wc", icon = " ", mode = { "n", "v" } },
 
   -- gitsigns
-  { "tw", "<cmd>Gitsigns toggle_word_diff<cr>", desc = "Toggle word diff", mode = "n" },
-  { "tl", "<cmd>Gitsigns toggle_linehl<cr>", desc = "Toggle line highlight", mode = "n" },
+  { "tg", group = "git", icon = " " },
+  { "tgw", "<cmd>Gitsigns toggle_word_diff<cr>", desc = "Toggle word diff", mode = "n" },
+  { "tgl", "<cmd>Gitsigns toggle_linehl<cr>", desc = "Toggle line highlight", mode = "n" },
   { "<leader>gh", "<cmd>Gitsigns preview_hunk_inline<cr>", desc = "Preview git hunk", mode = "n", icon = " " },
 
   -- fold
@@ -114,22 +115,6 @@ wk.add({
   { "zr", require("ufo").openAllFolds, mode = { "n" }, desc = "Unfold all", icon = " " },
   { "za", mode = { "n", "v" }, desc = "Fold block", icon = " " },
   { "zd", mode = { "n", "v" }, desc = "Unfold block", icon = " " },
-
-  -- dim
-  {
-    "td",
-    function()
-      if require("snacks.dim").enabled then
-        Snacks.dim.disable()
-      else
-        Snacks.dim.enable()
-      end
-    end,
-    desc = "Toggle Dimming",
-  },
-
-  -- colorizea
-  { "tc", "<cmd>ColorizerToggle<cr>", desc = "Toggle Colorizea" },
 
   -- multicursor
   { "<leader><up>", desc = "Multcursor ignore line", icon = "󰇀 " },
@@ -144,17 +129,51 @@ wk.add({
 })
 
 local Snacks = require("snacks")
+Snacks.toggle.zen():map("tz")
+Snacks.toggle.dim():map("td")
+Snacks.toggle.zoom():map("tf")
+
+  -- colorizea
+  -- { "tc", "<cmd>ColorizerToggle<cr>", desc = "Toggle Colorizea" },
 Snacks.toggle({
-  id = "zen",
-  name = "Zen Mode",
-  get = function()
-    return Snacks.zen.win and Snacks.zen.win:valid() or false
+  name = "Colorizer",
+  get = function ()
+    return require("colorizer").is_buffer_attached(0)
   end,
-  set = function(state)
-    if state then
-      Snacks.zen()
-    elseif Snacks.zen.win then
-      Snacks.zen.win:close()
+  set = function (state)
+    local c = require("colorizer")
+    if c.is_buffer_attached(0) then
+      c.detach_from_buffer(0)
+    else
+      c.attach_to_buffer(0)
     end
+  end
+}):map("tc")
+
+Snacks.toggle({
+  name = "Wrap",
+  get = function ()
+    return vim.opt.wrap:get()
   end,
-}):map("tz")
+  set = function (state)
+    if vim.opt.wrap:get() then
+      vim.opt.wrap = false
+    else
+      vim.opt.wrap = true
+    end
+  end
+}):map("tw")
+
+Snacks.toggle({
+  name = "Spell",
+  get = function ()
+    return vim.opt.spell:get()
+  end,
+  set = function (state)
+    if vim.opt.spell:get() then
+      vim.opt.spell = false
+    else
+      vim.opt.spell = true
+    end
+  end
+}):map("ts")

@@ -165,27 +165,6 @@ key.set("n", "E", "<cmd>tabnext<cr>")
 key.set("n", "s", "<cmd>HopWord<CR>")
 key.set("v", "s", "<cmd>HopWord<CR>")
 
--- togglewrap
-function ToggleWrap()
-  if vim.opt.wrap:get() then
-    vim.opt.wrap = false
-  else
-    vim.opt.wrap = true
-  end
-end
-
-key.set("n", "<leader>wr", [[<cmd>lua ToggleWrap()<CR>]], { desc = "Toggle Wrap" })
-
-function ToggleSpell()
-  if vim.opt.spell:get() then
-    vim.opt.spell = false
-  else
-    vim.opt.spell = true
-  end
-end
-
-key.set("n", "<leader>us", [[<cmd>lua ToggleSpell()<CR>]], { desc = "Toggle Spell" })
-
 -- terminal
 -- key.set("n", "<leader>gt", "<cmd>vsplit term://fish<CR>", { desc = "Terminal" })
 -- key.set("t", "<C-s>", "<C-\\><C-n>")
