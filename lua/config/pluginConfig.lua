@@ -177,3 +177,17 @@ Snacks.toggle({
     end
   end
 }):map("ts")
+
+Snacks.toggle({
+  name = "Auto Format",
+  get = function ()
+    return vim.g.autoformat_enabled
+  end,
+  set = function (state)
+    if vim.g.autoformat_enabled then
+      vim.g.autoformat_enabled = false
+    else
+      vim.g.autoformat_enabled = true
+    end
+  end
+}):map("tF")

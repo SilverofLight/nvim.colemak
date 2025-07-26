@@ -150,7 +150,7 @@ key.set("v", "<C-t>", "e")
 key.set("n", "<C-l>", "<C-u>")
 key.set("v", "<C-l>", "<C-u>")
 
-key.set("n", "<C-j>", "<C-i>")
+key.set("n", "<leader>j", "<C-i>", { desc = "JumpList next" })
 
 -- arround & in
 key.set("n", "c;", "ci")
