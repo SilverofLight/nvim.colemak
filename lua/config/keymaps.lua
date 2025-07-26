@@ -3,13 +3,13 @@ vim.g.mapleader = " "
 
 key.set("i", "<C-q>", "<++>")
 local function esc_fcitx()
-  if vim.fn.executable('fcitx5-remote') == 1 then
-    local corrent = vim.fn.system('fcitx5-remote -n')
-    if not corrent:match("keyboard-us") then
-      vim.fn.system('fcitx5-remote -c "keyboard-us"')
-    end
-  end
-  return "<esc>"
+	if vim.fn.executable("fcitx5-remote") == 1 then
+		local corrent = vim.fn.system("fcitx5-remote -n")
+		if not corrent:match("keyboard-us") then
+			vim.fn.system('fcitx5-remote -c "keyboard-us"')
+		end
+	end
+	return "<esc>"
 end
 key.set("i", "<esc>", esc_fcitx, { expr = true })
 key.set("n", "<esc>", "<cmd>nohl<CR>")
@@ -18,26 +18,26 @@ key.set("n", "<C-s>", "<cmd>w<CR>")
 key.set("i", "<C-s>", "<cmd>w<CR>")
 
 -- disable q
-key.set('n', 'Q', "q")
-key.set('n', 'q', "<nop>")
+key.set("n", "Q", "q")
+key.set("n", "q", "<nop>")
 
 function replace_next_placeholder()
-  local original_state = not vim.g.minianimate_disable
+	local original_state = not vim.g.minianimate_disable
 
-  vim.g.minianimate_disable = true
+	vim.g.minianimate_disable = true
 
-  local found_line = vim.fn.search('<++>')
-  if found_line > 0 then
-    vim.cmd('nohlsearch')
-    vim.api.nvim_feedkeys('zz"vc4l', 'n', false)
-  else
-    vim.fn.setpos('.', save_cursor)
-    vim.notify("No placeholder found", vim.log.levels.INFO)
-  end
+	local found_line = vim.fn.search("<++>")
+	if found_line > 0 then
+		vim.cmd("nohlsearch")
+		vim.api.nvim_feedkeys('zz"vc4l', "n", false)
+	else
+		vim.fn.setpos(".", save_cursor)
+		vim.notify("No placeholder found", vim.log.levels.INFO)
+	end
 
-  vim.defer_fn(function()
-    vim.g.minianimate_disable = not original_state
-  end, 50)
+	vim.defer_fn(function()
+		vim.g.minianimate_disable = not original_state
+	end, 50)
 end
 
 key.set("n", "<leader>o", replace_next_placeholder, { desc = "replace next <++>" })
@@ -93,20 +93,17 @@ key.set("v", "e", "gk")
 
 -- better jk
 key.set({ "n", "x" }, "n", function()
-  local count = vim.v.count
-  local prev_line = vim.fn.line(".")
-  local prev_winline = vim.fn.winline()
+	local count = vim.v.count
+	local prev_line = vim.fn.line(".")
+	local prev_winline = vim.fn.winline()
 
-  -- schedule make this function run after the parent function ended
-  vim.schedule(function()
-    if vim.fn.line(".") == prev_line and vim.fn.winline() == prev_winline then
-      vim.api.nvim_feedkeys(
-        vim.api.nvim_replace_termcodes("<C-e>", true, false, true),
-        "n", true
-      )
-    end
-  end)
-  return (count == 0) and "gj" or "j"
+	-- schedule make this function run after the parent function ended
+	vim.schedule(function()
+		if vim.fn.line(".") == prev_line and vim.fn.winline() == prev_winline then
+			vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<C-e>", true, false, true), "n", true)
+		end
+	end)
+	return (count == 0) and "gj" or "j"
 end, { desc = "Down (scroll if stuck)", expr = true, silent = true })
 
 key.set({ "n", "x" }, "e", "v:count == 0 ? 'gk' : 'k'", { desc = "Up", expr = true, silent = true })

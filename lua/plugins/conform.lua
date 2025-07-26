@@ -3,22 +3,22 @@ return {
 	dependencies = { "mason.nvim" },
 	lazy = true,
 	cmd = "ConformInfo",
-  init = function()
-    vim.g.autoformat_enabled = true
+	init = function()
+		vim.g.autoformat_enabled = true
 
-    vim.api.nvim_create_autocmd("BufWritePre", {
-      pattern = "*",
-      callback = function(args)
-        if vim.g.autoformat_enabled then
-          require("conform").format({
-            bufnr = args.buf,
-            timeout_ms = 3000,
-            lsp_format = "fallback",
-          })
-        end
-      end,
-    })
-  end,
+		vim.api.nvim_create_autocmd("BufWritePre", {
+			pattern = "*",
+			callback = function(args)
+				if vim.g.autoformat_enabled then
+					require("conform").format({
+						bufnr = args.buf,
+						timeout_ms = 3000,
+						lsp_format = "fallback",
+					})
+				end
+			end,
+		})
+	end,
 	keys = {
 		{
 			"<leader>cf",

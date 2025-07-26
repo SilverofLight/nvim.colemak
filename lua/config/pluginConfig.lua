@@ -1,31 +1,30 @@
 -----@diagnostic disable: undefined-global
 -- hop
-local hop = require('hop')
-local directions = require('hop.hint').HintDirection
-vim.keymap.set('', 'f', function()
-  hop.hint_char1({ direction = directions.AFTER_CURSOR, current_line_only = true })
+local hop = require("hop")
+local directions = require("hop.hint").HintDirection
+vim.keymap.set("", "f", function()
+	hop.hint_char1({ direction = directions.AFTER_CURSOR, current_line_only = true })
 end, { silent = true })
-vim.keymap.set('', 'F', function()
-  hop.hint_char1({ direction = directions.BEFORE_CURSOR, current_line_only = true })
+vim.keymap.set("", "F", function()
+	hop.hint_char1({ direction = directions.BEFORE_CURSOR, current_line_only = true })
 end, { silent = true })
 
-
-vim.keymap.set('n', '<leader>fm', "<cmd>lua vim.lsp.buf.format { async = true }<CR>", { desc = "Lsp format" })
-vim.keymap.set('n', 'gd', "<cmd>lua vim.lsp.buf.definition()<CR>", { desc = "Goto Definition" })
-vim.keymap.set('n', '<leader>ca', "<cmd>lua vim.lsp.buf.code_action()<CR>", { desc = "Code action" })
-vim.keymap.set('n', '<leader>r', "<cmd>lua vim.lsp.buf.rename()<CR>", { desc = "Lsp Rename" })
+vim.keymap.set("n", "<leader>fm", "<cmd>lua vim.lsp.buf.format { async = true }<CR>", { desc = "Lsp format" })
+vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { desc = "Goto Definition" })
+vim.keymap.set("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", { desc = "Code action" })
+vim.keymap.set("n", "<leader>r", "<cmd>lua vim.lsp.buf.rename()<CR>", { desc = "Lsp Rename" })
 -- vim.keymap.set('n', 'gh', "<cmd>lua vim.lsp.buf.hover()<CR>", { desc = "Lsp Hover" })
-vim.keymap.set('n', 'gh', function()
-  vim.lsp.buf.hover({
-    border = "rounded"
-  })
+vim.keymap.set("n", "gh", function()
+	vim.lsp.buf.hover({
+		border = "rounded",
+	})
 end, { desc = "Lsp Hover" })
 
-vim.keymap.set('n', 'gl', "<cmd>lua vim.diagnostic.open_float()<CR>", { desc = "Diagnostic" })
+vim.keymap.set("n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", { desc = "Diagnostic" })
 vim.diagnostic.config({
-  float = {
-    border = "rounded",
-  }
+	float = {
+		border = "rounded",
+	},
 })
 
 -- if not vim.g.vscode then
@@ -49,7 +48,6 @@ vim.diagnostic.config({
 --   }
 -- end
 
-
 -- copilot
 -- vim.keymap.set('i', '<C-l>', 'copilot#Accept("\\<CR>")', {
 --   expr = true,
@@ -58,74 +56,74 @@ vim.diagnostic.config({
 -- vim.g.copilot_no_tab_map = true
 
 --- buffer line
-vim.opt.termguicolors = true,
-
--- avante
-vim.keymap.set("n", "ta", "<cmd>AvanteToggle<CR>", { desc = "Toggle Avante" })
+vim.opt.termguicolors =
+	true,
+	-- avante
+	vim.keymap.set("n", "ta", "<cmd>AvanteToggle<CR>", { desc = "Toggle Avante" })
 vim.keymap.set("v", "<leader>ta", "<cmd>AvanteAsk<CR>", { desc = "Avante Ask" })
 vim.keymap.set("v", "<leader>te", "<cmd>AvanteEdit<CR>", { desc = "Avante Edit" })
 
 -- which key
 local wk = require("which-key")
 wk.add({
-  { "<leader>b", group = "Buffer" },
-  { "<leader>x", group = "Trouble", icon = "󱪊 " },
-  { "<leader>w", group = "Warp & Save", icon = " " },
-  { "<leader>u", group = "Spell", icon = " " },
-  { "<leader>f", group = "Search, Aerial & format" },
-  { "<leader>c", group = "Lsp", icon = " " },
-  { "<leader>g", group = "Terminal & gitsigns" },
-  { "<leader>q", group = "Quit" },
-  { "<leader>l", "<cmd>Lazy<cr>", icon = "󰒲 " },
-  { "t", group = "Tab" },
-  { "gr", group = "Lsp", icon = " ", mode = { "n", "v" } },
-  { "gT", hidden = true, mode = { "n", "v" } },
-  { "ge", hidden = true, mode = { "n", "v" } },
-  { "gg", hidden = true, mode = { "n", "v" } },
-  { "g,", hidden = true, mode = { "n", "v" } },
-  { "g;", hidden = true, mode = { "n", "v" } },
-  { "g%", hidden = true, mode = { "n", "v" } },
-  { "gu", hidden = true, mode = { "n", "v" } },
-  { "gU", hidden = true, mode = { "n", "v" } },
-  { "gS", hidden = true, mode = { "v" } },
-  { "<leader>gs", "<cmd>GrugFar<cr>", desc = "grug-far", icon = " " },
+	{ "<leader>b", group = "Buffer" },
+	{ "<leader>x", group = "Trouble", icon = "󱪊 " },
+	{ "<leader>w", group = "Warp & Save", icon = " " },
+	{ "<leader>u", group = "Spell", icon = " " },
+	{ "<leader>f", group = "Search, Aerial & format" },
+	{ "<leader>c", group = "Lsp", icon = " " },
+	{ "<leader>g", group = "Terminal & gitsigns" },
+	{ "<leader>q", group = "Quit" },
+	{ "<leader>l", "<cmd>Lazy<cr>", icon = "󰒲 " },
+	{ "t", group = "Tab" },
+	{ "gr", group = "Lsp", icon = " ", mode = { "n", "v" } },
+	{ "gT", hidden = true, mode = { "n", "v" } },
+	{ "ge", hidden = true, mode = { "n", "v" } },
+	{ "gg", hidden = true, mode = { "n", "v" } },
+	{ "g,", hidden = true, mode = { "n", "v" } },
+	{ "g;", hidden = true, mode = { "n", "v" } },
+	{ "g%", hidden = true, mode = { "n", "v" } },
+	{ "gu", hidden = true, mode = { "n", "v" } },
+	{ "gU", hidden = true, mode = { "n", "v" } },
+	{ "gS", hidden = true, mode = { "v" } },
+	{ "<leader>gs", "<cmd>GrugFar<cr>", desc = "grug-far", icon = " " },
 
-  { "<leader>a", icon = " " },
-  { "<leader>o", icon = "󰛔 " },
-  { "<leader>p", icon = "󰍔 " },
-  { "<leader>r", icon = "󰘵 " },
-  { "<leader>s", icon = " " },
-  { "<leader>t", icon = "󰊿 " },
-  { "gd", icon = " " },
-  { "gh", icon = " " },
-  { "gO", icon = " " },
-  { "gw", icon = " " },
-  { "gi", icon = " ", desc = "Last insert position" },
-  { "gv", icon = "󰒅 ", desc = "Last visual position" },
-  { "<leader>wc", icon = " ", mode = { "n", "v" } },
+	{ "<leader>a", icon = " " },
+	{ "<leader>o", icon = "󰛔 " },
+	{ "<leader>p", icon = "󰍔 " },
+	{ "<leader>r", icon = "󰘵 " },
+	{ "<leader>s", icon = " " },
+	{ "<leader>t", icon = "󰊿 " },
+	{ "gd", icon = " " },
+	{ "gh", icon = " " },
+	{ "gO", icon = " " },
+	{ "gw", icon = " " },
+	{ "gi", icon = " ", desc = "Last insert position" },
+	{ "gv", icon = "󰒅 ", desc = "Last visual position" },
+	{ "<leader>wc", icon = " ", mode = { "n", "v" } },
 
-  -- gitsigns
-  { "tg", group = "git", icon = " " },
-  { "tgw", "<cmd>Gitsigns toggle_word_diff<cr>", desc = "Toggle word diff", mode = "n" },
-  { "tgl", "<cmd>Gitsigns toggle_linehl<cr>", desc = "Toggle line highlight", mode = "n" },
-  { "<leader>gh", "<cmd>Gitsigns preview_hunk_inline<cr>", desc = "Preview git hunk", mode = "n", icon = " " },
+	-- gitsigns
+	{ "tg", group = "git", icon = " " },
+	{ "tgw", "<cmd>Gitsigns toggle_word_diff<cr>", desc = "Toggle word diff", mode = "n" },
+	{ "tgl", "<cmd>Gitsigns toggle_linehl<cr>", desc = "Toggle line highlight", mode = "n" },
+	{ "<leader>gh", "<cmd>Gitsigns preview_hunk_inline<cr>", desc = "Preview git hunk", mode = "n", icon = " " },
 
-  -- fold
-  { "zm", require("ufo").closeAllFolds, mode = { "n" }, desc = "Fold all", icon = " " },
-  { "zr", require("ufo").openAllFolds, mode = { "n" }, desc = "Unfold all", icon = " " },
-  { "za", mode = { "n", "v" }, desc = "Fold block", icon = " " },
-  { "zd", mode = { "n", "v" }, desc = "Unfold block", icon = " " },
+	-- fold
+	{ "zm", require("ufo").closeAllFolds, mode = { "n" }, desc = "Fold all", icon = " " },
+	{ "zr", require("ufo").openAllFolds, mode = { "n" }, desc = "Unfold all", icon = " " },
+	{ "za", mode = { "n", "v" }, desc = "Fold block", icon = " " },
+	{ "zd", mode = { "n", "v" }, desc = "Unfold block", icon = " " },
 
-  -- multicursor
-  { "<leader><up>", desc = "Multcursor ignore line", icon = "󰇀 " },
-  { "<leader><down>", desc = "Multcursor ignore line", icon = "󰇀 " },
-  { "<leader>k", desc = "Multcursor next", icon = "󰇀 " },
-  { "<leader>m", desc = "Multcursor ignore next", icon = "󰇀 " },
-  { "<leader>K", desc = "Multcursor pre", icon = "󰇀 " },
-  { "<leader>M", desc = "Multcursor ignore pre", icon = "󰇀 " },
+	-- multicursor
+	{ "<leader><up>", desc = "Multcursor ignore line", icon = "󰇀 " },
+	{ "<leader><down>", desc = "Multcursor ignore line", icon = "󰇀 " },
+	{ "<leader>k", desc = "Multcursor next", icon = "󰇀 " },
+	{ "<leader>m", desc = "Multcursor ignore next", icon = "󰇀 " },
+	{ "<leader>K", desc = "Multcursor pre", icon = "󰇀 " },
+	{ "<leader>M", desc = "Multcursor ignore pre", icon = "󰇀 " },
 
-  --- mpv
-  { "<leader>v", group = "MpvNote", icon = " " }
+	--- mpv
+	{ "<leader>v", group = "MpvNote", icon = " " },
 })
 
 local Snacks = require("snacks")
@@ -133,61 +131,61 @@ Snacks.toggle.zen():map("tz")
 Snacks.toggle.dim():map("td")
 Snacks.toggle.zoom():map("tf")
 
-  -- colorizea
-  -- { "tc", "<cmd>ColorizerToggle<cr>", desc = "Toggle Colorizea" },
+-- colorizea
+-- { "tc", "<cmd>ColorizerToggle<cr>", desc = "Toggle Colorizea" },
 Snacks.toggle({
-  name = "Colorizer",
-  get = function ()
-    return require("colorizer").is_buffer_attached(0)
-  end,
-  set = function (state)
-    local c = require("colorizer")
-    if c.is_buffer_attached(0) then
-      c.detach_from_buffer(0)
-    else
-      c.attach_to_buffer(0)
-    end
-  end
+	name = "Colorizer",
+	get = function()
+		return require("colorizer").is_buffer_attached(0)
+	end,
+	set = function(state)
+		local c = require("colorizer")
+		if c.is_buffer_attached(0) then
+			c.detach_from_buffer(0)
+		else
+			c.attach_to_buffer(0)
+		end
+	end,
 }):map("tc")
 
 Snacks.toggle({
-  name = "Wrap",
-  get = function ()
-    return vim.opt.wrap:get()
-  end,
-  set = function (state)
-    if vim.opt.wrap:get() then
-      vim.opt.wrap = false
-    else
-      vim.opt.wrap = true
-    end
-  end
+	name = "Wrap",
+	get = function()
+		return vim.opt.wrap:get()
+	end,
+	set = function(state)
+		if vim.opt.wrap:get() then
+			vim.opt.wrap = false
+		else
+			vim.opt.wrap = true
+		end
+	end,
 }):map("tw")
 
 Snacks.toggle({
-  name = "Spell",
-  get = function ()
-    return vim.opt.spell:get()
-  end,
-  set = function (state)
-    if vim.opt.spell:get() then
-      vim.opt.spell = false
-    else
-      vim.opt.spell = true
-    end
-  end
+	name = "Spell",
+	get = function()
+		return vim.opt.spell:get()
+	end,
+	set = function(state)
+		if vim.opt.spell:get() then
+			vim.opt.spell = false
+		else
+			vim.opt.spell = true
+		end
+	end,
 }):map("ts")
 
 Snacks.toggle({
-  name = "Auto Format",
-  get = function ()
-    return vim.g.autoformat_enabled
-  end,
-  set = function (state)
-    if vim.g.autoformat_enabled then
-      vim.g.autoformat_enabled = false
-    else
-      vim.g.autoformat_enabled = true
-    end
-  end
+	name = "Auto Format",
+	get = function()
+		return vim.g.autoformat_enabled
+	end,
+	set = function(state)
+		if vim.g.autoformat_enabled then
+			vim.g.autoformat_enabled = false
+		else
+			vim.g.autoformat_enabled = true
+		end
+	end,
 }):map("tF")
