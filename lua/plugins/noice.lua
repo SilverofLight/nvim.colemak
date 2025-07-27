@@ -1,6 +1,11 @@
 return {
 	"folke/noice.nvim",
 	event = "VeryLazy",
+	init = function()
+		vim.api.nvim_create_user_command("MessagesNoice", function()
+			require("noice").cmd("all")
+		end, { desc = "show all messages" })
+	end,
 	opts = {
 		lsp = {
 			override = {
