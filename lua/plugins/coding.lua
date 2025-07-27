@@ -84,6 +84,26 @@ return {
 					enabled = true,
 				},
 			},
+			cmdline = {
+				enabled = true,
+				keymap = {
+					preset = "cmdline",
+					["<Up>"] = { "select_prev", "fallback" },
+					["<Down>"] = { "select_next", "fallback" },
+				},
+				sources = function()
+					local type = vim.fn.getcmdtype()
+					-- Search forward and backward
+					if type == "/" or type == "?" then
+						return { "buffer" }
+					end
+					-- Commands
+					if type == ":" or type == "@" then
+						return { "cmdline", "buffer" }
+					end
+					return {}
+				end,
+			},
 
 			-- Default list of enabled providers defined so that you can extend it
 			-- elsewhere in your config, without redefining it, due to `opts_extend`
