@@ -87,7 +87,7 @@ return {
 			cmdline = {
 				enabled = true,
 				keymap = {
-					preset = "cmdline",
+					["<Tab>"] = { "select_and_accept", "fallback" },
 					["<Up>"] = { "select_prev", "fallback" },
 					["<Down>"] = { "select_next", "fallback" },
 				},
