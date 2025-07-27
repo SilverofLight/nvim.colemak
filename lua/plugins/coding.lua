@@ -91,6 +91,7 @@ return {
 					["<Up>"] = { "select_prev", "fallback" },
 					["<Down>"] = { "select_next", "fallback" },
 				},
+				completion = { menu = { auto_show = true } },
 				sources = function()
 					local type = vim.fn.getcmdtype()
 					-- Search forward and backward
