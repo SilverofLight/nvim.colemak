@@ -4,7 +4,12 @@ return {
 	lazy = true,
 	cmd = "ConformInfo",
 	init = function()
-		vim.g.autoformat_enabled = true
+		local bufname = vim.api.nvim_buf_get_name(0)
+		if bufname and bufname ~= "" and bufname:match("nvimAnywhere") then
+			vim.g.autoformat_enabled = false
+		else
+			vim.g.autoformat_enabled = true
+		end
 
 		vim.api.nvim_create_autocmd("BufWritePre", {
 			pattern = "*",
