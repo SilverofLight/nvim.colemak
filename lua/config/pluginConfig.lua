@@ -189,3 +189,19 @@ Snacks.toggle({
 		end
 	end,
 }):map("tF")
+
+-- list
+Snacks.toggle({
+	name = "List",
+	get = function()
+		return vim.opt.list:get()
+	end,
+
+	set = function(state)
+		if vim.opt.list:get() then
+			vim.opt.list = false
+		else
+			vim.opt.list = true
+		end
+	end,
+}):map("tl")

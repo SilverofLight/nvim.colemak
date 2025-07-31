@@ -69,3 +69,6 @@ opt.undolevels = 10000
 
 -- confirm to save changes
 opt.confirm = true
+
+opt.list = true
+opt.listchars = { space = "·", tab = "--" }
