@@ -81,6 +81,24 @@ vim.api.nvim_create_autocmd("FileType", {
 	end,
 })
 
+-- toggle codecompanion
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "codecompanion",
+	callback = function(event)
+		vim.bo[event.buf].buflisted = false
+		vim.schedule(function()
+			vim.keymap.set("n", "q", function()
+				vim.cmd("CodeCompanionChat Toggle")
+				pcall(vim.api.nvim_buf_delete, event.buf, { force = true })
+			end, {
+				buffer = event.buf,
+				silent = true,
+				desc = "Toggle CodeCompanionChat",
+			})
+		end)
+	end,
+})
+
 -- resize splits if window got resized
 vim.api.nvim_create_autocmd({ "VimResized" }, {
 	group = augroup("resize_splits"),

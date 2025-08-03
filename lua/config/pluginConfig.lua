@@ -56,12 +56,7 @@ vim.diagnostic.config({
 -- vim.g.copilot_no_tab_map = true
 
 --- buffer line
-vim.opt.termguicolors =
-	true,
-	-- avante
-	vim.keymap.set("n", "ta", "<cmd>AvanteToggle<CR>", { desc = "Toggle Avante" })
-vim.keymap.set("v", "<leader>ta", "<cmd>AvanteAsk<CR>", { desc = "Avante Ask" })
-vim.keymap.set("v", "<leader>te", "<cmd>AvanteEdit<CR>", { desc = "Avante Edit" })
+vim.opt.termguicolors = true
 
 -- which key
 local wk = require("which-key")
@@ -124,6 +119,9 @@ wk.add({
 
 	--- mpv
 	{ "<leader>v", group = "MpvNote", icon = " " },
+
+	-- codecompanion
+	{ "ta", "<cmd>CodeCompanionChat Toggle<cr>", desc = "Toggle CodeCompanion", mode = { "n" } },
 })
 
 local Snacks = require("snacks")
