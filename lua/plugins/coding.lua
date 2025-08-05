@@ -6,7 +6,7 @@ return {
 		-- optional: provides snippets for the snippet source
 		-- dependencies = 'rafamadriz/friendly-snippets',
 		dependencies = {
-			"Kaiser-Yang/blink-cmp-avante",
+			"ribru17/blink-cmp-spell",
 		},
 
 		-- use a release tag to download pre-built binaries
@@ -32,7 +32,7 @@ return {
 				["<C-k>"] = { "select_next", "fallback" },
 			},
 			sources = {
-				default = { "lsp", "snippets", "path", "buffer", "codeium" },
+				default = { "lsp", "snippets", "spell", "path", "buffer", "codeium" },
 				providers = {
 					codeium = {
 						name = "Codeium",
@@ -41,6 +41,25 @@ return {
 						enabled = function()
 							return vim.bo.filetype ~= "markdown" and vim.bo.filetype ~= "AvanteInput"
 						end,
+					},
+					spell = {
+						naml = "Spell",
+						module = "blink-cmp-spell",
+						opt = {
+							enable_in_context = function()
+								local curpos = vim.api.nvim_win_get_cursor(0)
+								local captures = vim.treesitter.get_captures_at_pos(0, curpos[1] - 1, curpos[2] - 1)
+								local in_spell_capture = false
+								for _, cap in inpairs(captures) do
+									if cap.capture == "spell" then
+										in_spell_capture = true
+									elseif cap.capture == "nospell" then
+										return false
+									end
+								end
+								return in_spell_capture
+							end,
+						},
 					},
 				},
 			},
