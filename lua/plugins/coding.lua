@@ -32,15 +32,8 @@ return {
 				["<C-k>"] = { "select_next", "fallback" },
 			},
 			sources = {
-				default = { "avante", "lsp", "snippets", "path", "buffer", "codeium" },
+				default = { "lsp", "snippets", "path", "buffer", "codeium" },
 				providers = {
-					avante = {
-						module = "blink-cmp-avante",
-						name = "Avante",
-						opts = {
-							-- opts for blink-cmp-avante
-						},
-					},
 					codeium = {
 						name = "Codeium",
 						module = "codeium.blink",
