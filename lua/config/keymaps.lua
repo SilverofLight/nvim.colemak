@@ -22,7 +22,7 @@ key.set("n", "Q", "q")
 key.set("n", "q", "<nop>")
 
 function replace_next_placeholder()
-	local original_state = not vim.g.minianimate_disable
+	local original_state = vim.g.minianimate_disable
 
 	vim.g.minianimate_disable = true
 
@@ -36,7 +36,7 @@ function replace_next_placeholder()
 	end
 
 	vim.defer_fn(function()
-		vim.g.minianimate_disable = not original_state
+		vim.g.minianimate_disable = original_state
 	end, 50)
 end
 
