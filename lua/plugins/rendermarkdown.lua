@@ -97,7 +97,7 @@ return {
 			left_margin = 1,
 			width = { "full", "block", "block", "block" },
 			left_pad = 2,
-			min_width = 30,
+			min_width = 50,
 			right_pad = 4,
 			-- backgrounds = {},
 		},

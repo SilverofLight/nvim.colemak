@@ -204,9 +204,9 @@ Snacks.toggle({
 	end,
 }):map("tl")
 
-vim.api.nvim_set_hl(0, "RenderMarkdownH1Bg", { bg = "#4e3a78" })
-vim.api.nvim_set_hl(0, "RenderMarkdownH2Bg", { bg = "#1e4d5d" })
-vim.api.nvim_set_hl(0, "RenderMarkdownH3Bg", { bg = "#7a2f1f" })
-vim.api.nvim_set_hl(0, "RenderMarkdownH4Bg", { bg = "#1a2b47" })
-vim.api.nvim_set_hl(0, "RenderMarkdownH5Bg", { bg = "#1e3324" })
-vim.api.nvim_set_hl(0, "RenderMarkdownH6Bg", { bg = "#3d2f1a" })
+vim.api.nvim_set_hl(0, "RenderMarkdownH1Bg", { bg = "#400E95" })
+vim.api.nvim_set_hl(0, "RenderMarkdownH2Bg", { bg = "#125564" })
+vim.api.nvim_set_hl(0, "RenderMarkdownH3Bg", { bg = "#3B4206" })
+vim.api.nvim_set_hl(0, "RenderMarkdownH4Bg", { bg = "#057022" })
+vim.api.nvim_set_hl(0, "RenderMarkdownH5Bg", { bg = "#663C0F" })
+vim.api.nvim_set_hl(0, "RenderMarkdownH6Bg", { bg = "#606C09" })
