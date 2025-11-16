@@ -99,7 +99,7 @@ return {
 			left_pad = 2,
 			min_width = 30,
 			right_pad = 4,
-			backgrounds = {},
+			-- backgrounds = {},
 		},
 		render_modes = { "n", "c", "t" },
 		checkbox = {
