@@ -13,7 +13,7 @@ local function esc_fcitx()
 end
 key.set("i", "<esc>", esc_fcitx, { expr = true })
 key.set("n", "<esc>", "<cmd>nohl<CR>")
-key.set("n", "S", "<cmd>w<CR>")
+-- key.set("n", "S", "<cmd>w<CR>")
 key.set("n", "<C-s>", "<cmd>w<CR>")
 key.set("i", "<C-s>", "<cmd>w<CR>")
 
@@ -161,6 +161,8 @@ key.set("n", "E", "<cmd>tabnext<cr>")
 -- hop config
 key.set("n", "s", "<cmd>HopWord<CR>")
 key.set("v", "s", "<cmd>HopWord<CR>")
+key.set("n", "S", "<cmd>HopFlypy1<CR>")
+key.set("v", "S", "<cmd>HopFlypy1<CR>")
 
 -- terminal
 -- key.set("n", "<leader>gt", "<cmd>vsplit term://fish<CR>", { desc = "Terminal" })
