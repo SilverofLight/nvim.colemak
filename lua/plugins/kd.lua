@@ -6,6 +6,7 @@ return {
 	config = function()
 		require("kd").setup({
 			window = {
+				title = " kd ", -- 标题
 				width = 50,
 			},
 		})
