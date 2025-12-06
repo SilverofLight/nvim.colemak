@@ -120,8 +120,8 @@ wk.add({
 	--- mpv
 	{ "<leader>v", group = "MpvNote", icon = " " },
 
-	-- codecompanion
-	{ "ta", "<cmd>CodeCompanionChat Toggle<cr>", desc = "Toggle CodeCompanion", mode = { "n" } },
+	-- Avante
+	{ "ta", "<cmd>AvanteToggle<cr>", desc = "Toggle Avante", mode = { "n" } },
 })
 
 local Snacks = require("snacks")

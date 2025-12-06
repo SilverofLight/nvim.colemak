@@ -20,14 +20,27 @@ return {
 			},
 		},
 
-		adapter = {
-			gemini = function()
-				return require("codecompanion.adapters").extend("gemini", {
-					env = {
-						api_key = "GEMINI_API_KEY",
-					},
-				})
-			end,
+		adapters = {
+			http = {
+				gemini = function()
+					return require("codecompanion.adapters").extend("gemini", {
+						env = {
+							api_key = "GEMINI_API_KEY",
+						},
+					})
+				end,
+				qwen = function()
+					return function()
+						return {
+							url = "https://dashscope.aliyuncs.com/compatible-mode/v1",
+							env = {
+								api_key = "QWEN_API_KEY",
+								model = "qwen-plus",
+							},
+						}
+					end
+				end,
+			},
 		},
 
 		display = {
