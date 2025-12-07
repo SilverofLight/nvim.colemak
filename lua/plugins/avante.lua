@@ -26,11 +26,13 @@ return {
 				__inherited_from = "openai",
 				api_key_name = "QWEN_API_KEY",
 				endpoint = "https://dashscope.aliyuncs.com/compatible-mode/v1",
+				-- model = "qwen3-coder-plus",
 				model = "qwen-plus",
 			},
 		},
 		behaviour = {
 			auto_set_keymaps = false,
+			auto_apply_diff_after_generation = false,
 		},
 		mappings = {
 			--- @class AvanteConflictMappings
