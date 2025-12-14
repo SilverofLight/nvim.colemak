@@ -204,9 +204,24 @@ Snacks.toggle({
 	end,
 }):map("tl")
 
+-- render color
 vim.api.nvim_set_hl(0, "RenderMarkdownH1Bg", { bg = "#400E95" })
 vim.api.nvim_set_hl(0, "RenderMarkdownH2Bg", { bg = "#125564" })
 vim.api.nvim_set_hl(0, "RenderMarkdownH3Bg", { bg = "#3B4206" })
 vim.api.nvim_set_hl(0, "RenderMarkdownH4Bg", { bg = "#057022" })
 vim.api.nvim_set_hl(0, "RenderMarkdownH5Bg", { bg = "#663C0F" })
 vim.api.nvim_set_hl(0, "RenderMarkdownH6Bg", { bg = "#606C09" })
+
+-- pyright conf
+vim.lsp.config("pyright", {
+	settings = {
+		python = {
+			analysis = {
+				typeCheckingMode = "off",
+				reportMissingTypeStubs = "warning",
+				reportUnusedVariable = "warning",
+				reportGeneraltypeIssues = "warning",
+			},
+		},
+	},
+})
