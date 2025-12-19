@@ -21,6 +21,9 @@ key.set("i", "<C-s>", "<cmd>w<CR>")
 key.set("n", "Q", "q")
 key.set("n", "q", "<nop>")
 
+-- use j as e
+key.set("n", "j", "e")
+
 function replace_next_placeholder()
 	local original_state = vim.g.minianimate_disable
 
