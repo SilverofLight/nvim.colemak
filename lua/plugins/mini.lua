@@ -57,6 +57,16 @@ return {
 				end,
 			}):map("<leader>ua")
 
+			Snacks.toggle({
+				name = "Mini Animate",
+				get = function()
+					return not vim.g.minianimate_disable
+				end,
+				set = function(state)
+					vim.g.minianimate_disable = not state
+				end,
+			}):map("tu")
+
 			local animate = require("mini.animate")
 			return vim.tbl_deep_extend("force", opts, {
 				resize = {
