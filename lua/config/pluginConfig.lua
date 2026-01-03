@@ -188,7 +188,7 @@ Snacks.toggle({
 	end,
 }):map("tF")
 
--- list
+-- list: weather display space and tab
 Snacks.toggle({
 	name = "List",
 	get = function()
@@ -203,6 +203,18 @@ Snacks.toggle({
 		end
 	end,
 }):map("tl")
+
+-- render
+Snacks.toggle({
+	name = "Render Markdown",
+	get = function()
+		return require("render-markdown").get()
+	end,
+
+	set = function(state)
+		require("render-markdown").toggle()
+	end,
+}):map("tm")
 
 -- render color
 vim.api.nvim_set_hl(0, "RenderMarkdownH1Bg", { bg = "#400E95" })

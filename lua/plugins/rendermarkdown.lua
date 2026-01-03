@@ -165,11 +165,7 @@ return {
 			disabled_modes = false,
 			above = 1,
 			below = 1,
-			ignore = {
-				bullet = true, -- render bullet in insert mode
-				head_border = true,
-				head_background = true,
-			},
+			ignore = {},
 		},
 		-- https://github.com/MeanderingProgrammer/render-markdown.nvim/issues/509
 		win_options = { concealcursor = { rendered = "nvc" } },
