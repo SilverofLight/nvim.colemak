@@ -1,7 +1,15 @@
 return {
 	"SilverofLight/MpvNote.nvim",
 	lazy = true,
-	cmd = { "MpvCopyStamp", "MpvPasteStamp", "MpvOpenStamp", "MpvHover", "MpvTogglePause", "MpvPasteImage" },
+	cmd = {
+		"MpvCopyStamp",
+		"MpvPasteStamp",
+		"MpvOpenStamp",
+		"MpvHover",
+		"MpvTogglePause",
+		"MpvPasteImage",
+		"MpvExtractSrt",
+	},
 	opts = {
 		socket = "/tmp/mpvsocket",
 		clipboard_cmd = "wl-copy",
@@ -17,3 +25,4 @@ return {
 	vim.keymap.set("n", "<leader>vh", "<cmd>MpvHover<CR>", { desc = "Mpv Hover" }),
 	vim.keymap.set({ "n", "i" }, "<C-j>", "<cmd>MpvTogglePause<CR>", { desc = "Mpv Toggle Pause" }),
 }
+
