@@ -85,7 +85,7 @@ wk.add({
 
 	{ "<leader>a", icon = " " },
 	{ "<leader>o", icon = "󰛔 " },
-	{ "<leader>p", icon = "󰍔 " },
+	{ "<leader>p", icon = " " },
 	{ "<leader>r", icon = "󰘵 " },
 	{ "<leader>s", icon = " " },
 	{ "<leader>t", icon = "󰊿 " },

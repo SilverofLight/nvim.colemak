@@ -172,7 +172,7 @@ key.set("v", "S", "<cmd>HopFlypy1<CR>")
 -- key.set("t", "<C-s>", "<C-\\><C-n>")
 
 -- markdown preview
-key.set("n", "<leader>p", "<cmd>MarkdownPreview<CR>", { desc = "MarkdownPreview" })
+-- key.set("n", "<leader>p", "<cmd>MarkdownPreview<CR>", { desc = "MarkdownPreview" })
 
 -- buffer
 key.set("n", "H", "<cmd>BufferLineCyclePrev<CR>")
