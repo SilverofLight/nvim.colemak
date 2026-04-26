@@ -32,12 +32,12 @@ vim.api.nvim_create_autocmd("BufNewFile", {
 })
 
 -- Start lsp after everything is loaded
-vim.api.nvim_create_autocmd("User", {
-	pattern = "VeryLazy",
-	callback = function()
-		vim.cmd("LspStart")
-	end,
-})
+-- vim.api.nvim_create_autocmd("User", {
+-- 	pattern = "VeryLazy",
+-- 	callback = function()
+-- 		vim.cmd("LspStart")
+-- 	end,
+-- })
 
 --- fix: no highlight in new buffer
 vim.api.nvim_create_autocmd("BufNew", {

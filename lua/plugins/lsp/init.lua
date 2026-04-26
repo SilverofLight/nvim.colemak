@@ -13,7 +13,7 @@ return {
 	-- },
 	{
 		"neovim/nvim-lspconfig",
-		event = { "UIEnter" },
+		event = { "BufReadPre", "BufNewFile" },
 		dependencies = {
 			"saghen/blink.cmp",
 			"mason.nvim",
