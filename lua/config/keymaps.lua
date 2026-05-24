@@ -185,3 +185,6 @@ key.set("n", "<leader>bd", "<cmd>bdelete<CR>", { desc = "Buffer delete" })
 -- vim.keymap.set('i', '<C-o>', '<ESC>o(<ESC>klywjp<C-a>a: )<ESC>i')
 -- notify history
 key.set("n", "<leader>,", "<cmd>lua Snacks.notifier.show_history()<cr>", { desc = "Notifier history" })
+
+-- del in
+key.del("x", "in")
