@@ -72,3 +72,6 @@ opt.confirm = true
 
 opt.list = true
 opt.listchars = { space = "·", tab = "--" }
+
+-- fix runtimepath
+vim.opt.runtimepath:append(vim.fn.stdpath("data") .. "/site")
