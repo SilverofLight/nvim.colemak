@@ -121,7 +121,7 @@ wk.add({
 	{ "<leader>v", group = "MpvNote", icon = " " },
 
 	-- Avante
-	{ "ta", "<cmd>AvanteToggle<cr>", desc = "Toggle Avante", mode = { "n" } },
+	-- { "ta", "<cmd>AvanteToggle<cr>", desc = "Toggle Avante", mode = { "n" } },
 })
 
 local Snacks = require("snacks")
