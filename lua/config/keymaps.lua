@@ -11,7 +11,7 @@ local function esc_fcitx()
 	end
 	return "<esc>"
 end
-key.set("i", "<esc>", esc_fcitx, { expr = true })
+-- key.set("i", "<esc>", esc_fcitx, { expr = true })
 key.set("n", "<esc>", "<cmd>nohl<CR>")
 -- key.set("n", "S", "<cmd>w<CR>")
 key.set("n", "<C-s>", "<cmd>w<CR>")
